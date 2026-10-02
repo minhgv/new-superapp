@@ -1,8 +1,8 @@
 # Mini App Store Standard for a Super App
 
-**Research status:** Deli Deep iteration 1
-**Evidence records:** 108
-**Rechecked source URLs:** 82 (HTTP 200)
+**Research status:** Deli Deep iteration 5
+**Evidence records:** 186
+**Iteration 5 additions:** 12 portable catalog/evidence-federation findings / 35 unique source URLs, all rechecked HTTP 200
 **Input context:** Alibaba Cloud SuperApp/WindVane POC resource sheet, tab `Software Info` (`gid=58086397`)
 
 ## Reading order
@@ -15,6 +15,10 @@
 | 4 | [Store UX, benchmark and operating model](04-store-ux-benchmark-operating-model.md) | Discovery, trust, analytics, monetization and support |
 | 5 | [Evidence appendix](05-evidence-appendix.md) | All validated findings and URLs, without omission |
 | 6 | [Research gaps and next validation](06-gaps-validation-plan.md) | Unknowns, pilot tests and decisions still required |
+| 7 | [Iteration 2: launch, offline and trust](07-iteration-2-launch-offline-trust.md) | 36 detailed findings on deep links, resilience, payments, notifications and marketplace trust |
+| 8 | [Iteration 3: accessibility, privacy and governance](08-iteration-3-accessibility-privacy-governance.md) | 20 normalized findings on inclusive UX, data governance, moderation, appeals and procedural controls |
+| 9 | [Iteration 4: reliability, SLO and operations](09-iteration-4-reliability-slo-operations.md) | 10 findings on SLOs, error budgets, canary evidence, incident learning, tenant isolation, recovery objectives and telemetry schema governance |
+| 10 | [Iteration 5: portable catalog and evidence federation](10-iteration-5-portable-catalog-and-evidence-federation.md) | 12 findings on W3C/Schema.org catalog projections, SPDX/CycloneDX/OpenVEX/in-toto evidence exchange, and OAuth publisher capability negotiation |
 
 ## Evidence rules
 

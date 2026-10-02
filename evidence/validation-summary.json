@@ -1,17 +1,19 @@
 {
-  "files": [
-    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/architecture-lifecycle.jsonl",
-    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/benchmarks.jsonl",
-    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/orchestrator-official.jsonl",
-    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/platform-patterns.jsonl",
-    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/security-standards.jsonl"
+  "iteration": 5,
+  "canonical_findings": 186,
+  "canonical_json_errors": [],
+  "candidate_files": [
+    "state/candidates/federation-manifest.jsonl",
+    "state/candidates/supply-chain-portability.jsonl",
+    "state/candidates/publisher-registration-capabilities.jsonl"
   ],
-  "raw_records": 108,
-  "unique_records": 108,
-  "json_errors": [],
-  "urls_total": 82,
-  "status_counts": {
-    "200": 82
+  "candidate_records": 12,
+  "candidate_unique_source_urls": 35,
+  "candidate_http_status_counts": {
+    "200": 35
   },
-  "failed_urls": {}
+  "candidate_failed_urls": {},
+  "candidate_exact_url_overlap_with_canonical": [],
+  "credentials_excluded": true,
+  "append_only_findings_verified": true
 }

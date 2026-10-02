@@ -1,6 +1,8 @@
 # Evidence Appendix
 
-Total validated records: **108**. Every finding below is retained from the append-only state.
+Total validated records: **174**. The original 108 records remain below; the 36 iteration-2 records are preserved in [Iteration 2 — Launch, Offline Resilience and Trust Controls](07-iteration-2-launch-offline-trust.md), the 20 normalized iteration-3 records are preserved in [Iteration 3 — Accessibility, Privacy and Governance](08-iteration-3-accessibility-privacy-governance.md), and the 10 iteration-4 reliability/SLO/operations records are preserved in [Iteration 4 — Reliability, SLO and Operations](09-iteration-4-reliability-slo-operations.md). Every record is retained from append-only state.
+
+> Iteration 4 parent validation: 10 selected records, 10 unique URLs, all rechecked HTTP 200. The NIST SP 800-34 source is explicitly marked withdrawn historical guidance and is used only for RTO/RPO vocabulary.
 
 ## accessibility
 ### 1. keyboard_accessibility — proposal
