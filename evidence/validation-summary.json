@@ -1,19 +1,28 @@
 {
-  "iteration": 5,
-  "canonical_findings": 186,
+  "iteration": 15,
+  "canonical_findings": 231,
   "canonical_json_errors": [],
   "candidate_files": [
-    "state/candidates/federation-manifest.jsonl",
-    "state/candidates/supply-chain-portability.jsonl",
-    "state/candidates/publisher-registration-capabilities.jsonl"
+    "state/candidates/monetization-apple-settlement.jsonl",
+    "state/candidates/monetization-google-settlement.jsonl",
+    "state/candidates/monetization-ledger-reconciliation.jsonl"
   ],
-  "candidate_records": 12,
-  "candidate_unique_source_urls": 35,
+  "candidate_records": 18,
+  "candidate_selected_records": 17,
+  "candidate_unique_source_urls_rechecked": 30,
   "candidate_http_status_counts": {
-    "200": 35
+    "200": 30
   },
   "candidate_failed_urls": {},
-  "candidate_exact_url_overlap_with_canonical": [],
+  "candidate_duplicate_records_rejected": 1,
+  "candidate_exact_url_overlap_with_canonical": [
+    "https://developer.android.com/google/play/billing/lifecycle",
+    "https://developer.android.com/google/play/billing/rtdn-reference"
+  ],
   "credentials_excluded": true,
-  "append_only_findings_verified": true
+  "append_only_findings_verified": true,
+  "findings_line_count_before": 214,
+  "findings_line_count_after": 231,
+  "worker_failures_recovered": 0,
+  "report": "/home/minhgv/mData/hermes_vps/super-app-mini-app-store-standard-report/14-iteration-15-commercial-settlement-governance.md"
 }

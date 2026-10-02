@@ -28,6 +28,7 @@ The Alibaba POC context is a good fit for this model: its documentation separate
 - Privacy notice, consent/data-use declarations, retention owner and accessible core store flows.
 - Accessibility acceptance evidence for catalog/search/detail/install/update/permission/error/takedown flows: reflow, text resizing, keyboard and assistive-technology semantics, visible focus, non-color status, reduced motion and localized language metadata.
 - Versioned data/telemetry profile, purpose/minimization map, consent withdrawal where applicable, deletion/export propagation, processor registry and high-risk privacy review decision.
+- Versioned target-audience and content-rating declarations, child/mixed-audience capability profile, host-enforced safe mode for unresolved age state, and mandatory re-review when content, ads, social features, permissions, SDKs or data practices change.
 - Stable app identity and verified HTTPS launch contract: explicit route/parameter allowlists, safe web fallback, and transaction-bound authentication context.
 - Host/backend-controlled payment and entitlement boundary; mini-apps receive only opaque or verified results, never payment credentials or de-tokenization authority.
 - Per-mini-app/per-purpose notification consent, unsubscribe/quiet controls and abuse rate limits; notification delivery must not be implied by install.
@@ -38,8 +39,10 @@ The Alibaba POC context is a good fit for this model: its documentation separate
 - Automated re-review on dependency/CVE/provenance changes.
 - OpenTelemetry-based observability with redaction and retention controls.
 - Incident quarantine, trust revocation, cache invalidation, user/operator notice and postmortem evidence.
-- Localization, accessibility conformance evidence, support SLAs and entitlement/monetization controls.
+- Localization and regionalization contract: validate BCP 47 tags, pin CLDR/translation revisions, publish deterministic fallback and locale coverage, keep language/script/region/currency/market separate, make HTTP cache variation explicit, and retain typed machine values for currency/time zones.
+- Accessibility conformance evidence, support SLAs and entitlement/monetization controls.
 - Per-artifact cache/freshness/invalidation policy with explicit offline fallback eligibility; measure cold/warm/offline performance by cohort and digest.
+- Commercial settlement contract: immutable host/provider product identity mapping, provider-event reconciliation, explicit refund/void/dispute/reserve states, publisher payout evidence, report-period close and bank-settlement control totals; keep provider-specific rules in adapters.
 - Ranking/review integrity controls: disclose applicable ranking parameters, separate editorial/paid placement, preserve review provenance and provide moderation/appeal evidence.
 - Market-specific moderation governance: notice-and-action intake, reasoned decisions, proportionate suspension, publisher complaint/mediation, and transparent appeal records; label EU DSA/P2B and platform-policy scope rather than treating them as universal law.
 - Operational reliability contract: versioned SLO/SLI definitions, error-budget release policy, immutable cohort evidence, rollback target, incident command/postmortem workflow, telemetry schema compatibility, tenant quotas/isolation, and tested MTD/RTO/RPO by criticality tier.

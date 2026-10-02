@@ -9,11 +9,14 @@
 - Exact rollout percentages, SLOs, package-size ceilings, vulnerability severity cutoffs and rollback timing require telemetry/threat-model calibration.
 - The cited web/cache APIs provide primitives but not a cross-runtime mini-app offline contract; native WindVane/uni-app cache layers, invalidation, stale serving and offline launch behavior remain POC-specific unknowns.
 - Payment provider, merchant-of-record, entitlement and refund/chargeback ownership are not determined by generic mini-app standards; they require a jurisdiction/provider contract and reconciliation tests.
+- Commercial settlement remains provider- and jurisdiction-dependent: merchant-of-record/principal-agent role, tax and FX policy, payout cadence, reserve duration, dispute liability, accounting basis, and bank-statement mapping need Finance/Tax/Legal decisions. Apple/Google/Stripe/Adyen evidence is adapter input, not a universal contract.
 - The POC's deep-link association, route/parameter allowlist and Android/iOS fallback behavior must be tested on real host versions; public web/app-link specifications do not prove WindVane support.
 - Ranking transparency, incentivized-review rules and notification consent/volume limits are jurisdiction- and channel-specific; Legal, Privacy and Trust & Safety must bind the applicable policy profile.
 - Accessibility evidence is still a control profile, not proof that the Alibaba/WindVane host bridge and every partner mini-app meet WCAG; native accessibility-tree, keyboard, screen-reader, text-scale and reduced-motion tests are required.
 - Privacy obligations, controller/processor roles, retention periods, child-directed handling and age assurance remain jurisdiction- and product-specific; EDPB/ICO/NIST sources provide controls and decision points, not a universal legal answer.
 - DSA/P2B notice, appeal, mediation and transparency duties depend on EU scope, provider category and exemptions; Google Play enforcement is platform-specific. Legal must map the target store model before adopting thresholds or SLA claims.
+- Age-rating and child-safety evidence is currently Google Play/Android-specific; Apple-specific review/rating patterns and an independent child-safety standard still require a fresh verified pass after the delegated worker persistence failure. Do not present the five Google/Android findings as a cross-platform or jurisdiction-neutral taxonomy.
+- The host must test child-safe runtime enforcement, parental approval/revocation propagation, and direct-launch bypass resistance; catalog declarations alone do not prove that capabilities, SDKs, social flows, ads, or precise location are actually blocked.
 
 ## Pilot validation backlog
 
@@ -30,8 +33,9 @@
 11. Test canonical deep links on Android/iOS host builds: verified association, malformed route, undeclared parameter, cold start, installed/uninstalled fallback and authentication-return replay.
 12. Test cache behavior by artifact class under online, stale, error, DNS-failure and airplane-mode conditions; verify digest checks before cache commit and launch.
 13. Run payment sandbox scenarios for pending/success/refund/chargeback/duplicate/out-of-order events; verify signature, deduplication, reconciliation and entitlement revocation.
-14. Test notification opt-in, revoke, quiet hours, transactional/marketing separation and volume quotas for multiple mini-apps and tenants.
-15. Build a ranking/review policy fixture with paid placement, editorial placement, incentivized feedback, fraud signals and appeal records; obtain Legal/Trust & Safety sign-off for target markets.
+14. Build the settlement close fixture: catalog/product diff, provider event replay, daily estimates, monthly report, fees/taxes/refunds, reserves/disputes, publisher payout and bank statement; verify UTC cut-off, watermarks, control totals, late-data exceptions and compensating entries.
+15. Test notification opt-in, revoke, quiet hours, transactional/marketing separation and volume quotas for multiple mini-apps and tenants.
+16. Build a ranking/review policy fixture with paid placement, editorial placement, incentivized feedback, fraud signals and appeal records; obtain Legal/Trust & Safety sign-off for target markets.
 
 ## Decision log
 

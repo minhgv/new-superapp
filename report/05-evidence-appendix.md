@@ -1,6 +1,6 @@
 # Evidence Appendix
 
-Total validated records: **174**. The original 108 records remain below; the 36 iteration-2 records are preserved in [Iteration 2 — Launch, Offline Resilience and Trust Controls](07-iteration-2-launch-offline-trust.md), the 20 normalized iteration-3 records are preserved in [Iteration 3 — Accessibility, Privacy and Governance](08-iteration-3-accessibility-privacy-governance.md), and the 10 iteration-4 reliability/SLO/operations records are preserved in [Iteration 4 — Reliability, SLO and Operations](09-iteration-4-reliability-slo-operations.md). Every record is retained from append-only state.
+Total validated records: **231**. The original 108 records remain below; the 36 iteration-2 records are preserved in [Iteration 2 — Launch, Offline Resilience and Trust Controls](07-iteration-2-launch-offline-trust.md), the 20 normalized iteration-3 records are preserved in [Iteration 3 — Accessibility, Privacy and Governance](08-iteration-3-accessibility-privacy-governance.md), the 10 iteration-4 records are preserved in [Iteration 4 — Reliability, SLO and Operations](09-iteration-4-reliability-slo-operations.md), the iteration-5/6/7 records are preserved in sections [10](10-iteration-5-portable-catalog-and-evidence-federation.md), [11](11-iteration-6-resource-cost-governance.md), and [12](12-iteration-7-localization-regionalization.md), the iteration-14 records are preserved in [13](13-iteration-14-age-rating-child-safety.md), and the iteration-15 records are preserved in [14](14-iteration-15-commercial-settlement-governance.md). Every record remains retained in append-only state; this appendix keeps the earlier detailed groups while later groups are linked to their dedicated sections.
 
 > Iteration 4 parent validation: 10 selected records, 10 unique URLs, all rechecked HTTP 200. The NIST SP 800-34 source is explicitly marked withdrawn historical guidance and is used only for RTO/RPO vocabulary.
 
@@ -625,3 +625,54 @@ Total validated records: **174**. The original 108 records remain below; the 36 
 - **Source:** NIST SP 800-218 SSDF RV.1.3
 - **Detail:** SSDF RV.1.3 calls for a vulnerability-disclosure policy, roles and processes, a product security incident response team, communication plans, playbooks, and exercises. Proposal: operate a store disclosure channel with publisher ownership, severity/SLA fields, PSIRT escalation, signed advisories, emergency takedown/quarantine, and an auditable drill record.
 - **URL(s):** [https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf)
+
+## localization_regionalization_iteration_7
+### 1. language_tag_validation_and_variants — official-bcp
+- **Source:** IETF RFC 5646 (BCP 47), Tags for Identifying Languages
+- **Detail:** RFC 5646 defines BCP 47 tags with language, optional script, region, variants, extensions and private use; it distinguishes well-formedness from registry validity. Proposal: validate catalog and UX locales against a pinned grammar and IANA registry snapshot, preserve the submitted tag plus normalized lookup form and parsed subtags, and record the validator registry date.
+- **URL(s):** [https://www.rfc-editor.org/rfc/rfc5646.html](https://www.rfc-editor.org/rfc/rfc5646.html)
+
+### 2. language_range_matching_and_fallback — official-bcp
+- **Source:** IETF RFC 4647 (BCP 47), Matching of Language Tags
+- **Detail:** RFC 4647 defines filtering and lookup, ordered language preferences, and an explicit no-match default; the application must choose the matching scheme and result cardinality. Proposal: use filtering for catalog facets and lookup for one listing or UX resource, publish the fallback chain and tie-break, and record requested ranges, matching mode, selected tag, fallback step and no-match result.
+- **URL(s):** [https://www.rfc-editor.org/rfc/rfc4647.html](https://www.rfc-editor.org/rfc/rfc4647.html)
+
+### 3. cldr_locale_inheritance_script_region_fallback — official-standard
+- **Source:** Unicode CLDR UTS #35 Part 1 Core
+- **Detail:** CLDR defines locale resource inheritance and parent-locale overrides, including script-safe fallback and a distinction between resource-bundle lookup and item-level lookup. Proposal: model localized listings and UX resources as locale-keyed bundles, pin CLDR parent data, preserve script/region boundaries, and distinguish absent, inherited and intentionally empty values.
+- **URL(s):** [https://www.unicode.org/reports/tr35/#Locale_Inheritance_and_Matching](https://www.unicode.org/reports/tr35/#Locale_Inheritance_and_Matching)
+
+### 4. cldr_release_and_translation_versioning — official-project
+- **Source:** Unicode CLDR Releases/Downloads and unicode-org/cldr-json README
+- **Detail:** Published CLDR releases are stable references, while the JSON distribution is generated from CLDR XML and carries data-status constraints. Proposal: record locale tag, translation revision, CLDR release/corrigendum, source format, generated-data revision, coverage/status, timestamp and content hash; retain prior bundles for rollback and review translation changes separately from CLDR upgrades.
+- **URL(s):** [https://cldr.unicode.org/index/downloads](https://cldr.unicode.org/index/downloads), [https://raw.githubusercontent.com/unicode-org/cldr-json/main/README.md](https://raw.githubusercontent.com/unicode-org/cldr-json/main/README.md)
+
+### 5. localized_representation_negotiation_and_cache_key — official-normative
+- **Source:** IETF RFC 9110 — HTTP Semantics
+- **Detail:** RFC 9110 defines Accept-Language, Content-Language and Vary; Vary expands the cache key when Accept-Language influenced representation selection, and the RFC notes privacy expectations around complete preference vectors. Proposal: emit Content-Language and Vary for locale-varying catalog responses, keep digest-addressed artifacts locale-invariant, and isolate authenticated/entitlement state from shared locale variants.
+- **URL(s):** [https://datatracker.ietf.org/doc/html/rfc9110#name-accept-language](https://datatracker.ietf.org/doc/html/rfc9110#name-accept-language)
+
+### 6. locale_aware_discovery_urls_user_override — official-i18n-guidance
+- **Source:** W3C Internationalization — When to use language negotiation
+- **Detail:** W3C recommends not relying on negotiation alone, providing visible language choices, and making explicit choices sticky through profile state or language-specific links. Proposal: give listings and launch representations stable locale-addressable URLs, let explicit URL selection override Accept-Language, and do not redirect a shared locale URL back to an inferred locale.
+- **URL(s):** [https://www.w3.org/International/questions/qa-when-lang-neg](https://www.w3.org/International/questions/qa-when-lang-neg)
+
+### 7. accept_language_not_region_authority — official-i18n-guidance
+- **Source:** W3C Internationalization — Accept-Language used for locale setting
+- **Detail:** W3C says Accept-Language is a language hint, not a complete locale and may be wrong on shared or borrowed devices. Proposal: keep language, script, region, currency, market and entitlement separate; require explicit user, tenant or host-market selection for region-sensitive behavior and avoid logging the raw preference vector.
+- **URL(s):** [https://www.w3.org/International/questions/qa-accept-lang-locales.en.html](https://www.w3.org/International/questions/qa-accept-lang-locales.en.html)
+
+### 8. content_language_metadata_and_text_language_separation — official-i18n-guidance
+- **Source:** W3C Internationalization — HTTP headers, meta elements and language information
+- **Detail:** W3C distinguishes HTTP Content-Language audience metadata from HTML lang text metadata and recommends lang on the document and mixed-language fragments. Proposal: emit negotiated Content-Language, set HTML lang, and carry selected/available locale plus field-level language metadata in JSON where needed; flag inconsistent metadata.
+- **URL(s):** [https://www.w3.org/International/questions/qa-http-and-lang/qa-html-language-declarations](https://www.w3.org/International/questions/qa-http-and-lang/qa-html-language-declarations)
+
+### 9. regional_number_currency_formatting — primary-standard
+- **Source:** ECMA International, ECMA-402 13th edition, NumberFormat Objects
+- **Detail:** ECMA-402 defines locale-sensitive NumberFormat styles and requires a well-formed three-letter currency code for currency formatting; resolvedOptions exposes resolved locale, numbering system and formatting options. Proposal: store typed amounts with explicit currency and rounding policy, keep localized strings non-authoritative, and retain resolved formatting evidence for visual/audit tests.
+- **URL(s):** [https://402.ecma-international.org/#numberformat-objects](https://402.ecma-international.org/#numberformat-objects)
+
+### 10. time_zone_identifier_contract — primary-standard
+- **Source:** IETF RFC 9557, Date and Time on the Internet
+- **Detail:** RFC 9557 defines named IANA time zones and explains why fixed offsets are unsuitable for local-time operations; named-zone rules can change. Proposal: represent schedules with an instant/offset plus an IANA timeZoneId, retain source timestamp and tzdb evidence, and reject offset-only recurring-event identifiers.
+- **URL(s):** [https://www.rfc-editor.org/rfc/rfc9557.html#section-1.2](https://www.rfc-editor.org/rfc/rfc9557.html#section-1.2)

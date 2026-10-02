@@ -1,8 +1,9 @@
 # Mini App Store Standard for a Super App
 
-**Research status:** Deli Deep iteration 5
-**Evidence records:** 186
-**Iteration 5 additions:** 12 portable catalog/evidence-federation findings / 35 unique source URLs, all rechecked HTTP 200
+**Research status:** Deli Deep iteration 15
+**Evidence records:** 231
+**Iteration 15 additions:** 17 commercial-settlement findings / 30 unique candidate source URLs, all rechecked HTTP 200; one duplicate primary URL rejected
+**Credential exclusion:** true; Google Sheet credentials and raw sheet content are not included
 **Input context:** Alibaba Cloud SuperApp/WindVane POC resource sheet, tab `Software Info` (`gid=58086397`)
 
 ## Reading order
@@ -19,6 +20,10 @@
 | 8 | [Iteration 3: accessibility, privacy and governance](08-iteration-3-accessibility-privacy-governance.md) | 20 normalized findings on inclusive UX, data governance, moderation, appeals and procedural controls |
 | 9 | [Iteration 4: reliability, SLO and operations](09-iteration-4-reliability-slo-operations.md) | 10 findings on SLOs, error budgets, canary evidence, incident learning, tenant isolation, recovery objectives and telemetry schema governance |
 | 10 | [Iteration 5: portable catalog and evidence federation](10-iteration-5-portable-catalog-and-evidence-federation.md) | 12 findings on W3C/Schema.org catalog projections, SPDX/CycloneDX/OpenVEX/in-toto evidence exchange, and OAuth publisher capability negotiation |
+| 11 | [Iteration 6: runtime resource and cost governance](11-iteration-6-resource-cost-governance.md) | 13 findings on quotas, tenant isolation, abuse resistance, cost attribution and shared/idle cost visibility |
+| 12 | [Iteration 7: localization and regionalization](12-iteration-7-localization-regionalization.md) | 10 findings on BCP 47/CLDR locale contracts, HTTP language negotiation, regional formatting and privacy-aware fallback |
+| 13 | [Iteration 14: age rating and child safety](13-iteration-14-age-rating-child-safety.md) | 5 findings on audience declarations, content ratings, child/mixed-audience capability policies, release re-review and host-only age signals |
+| 14 | [Iteration 15: commercial settlement governance](14-iteration-15-commercial-settlement-governance.md) | 17 findings on commerce eligibility/product identity, subscription/refund reconciliation, publisher payout evidence, reserves/disputes and provider-to-bank settlement |
 
 ## Evidence rules
 
