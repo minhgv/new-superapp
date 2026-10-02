@@ -1,0 +1,17 @@
+{
+  "files": [
+    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/architecture-lifecycle.jsonl",
+    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/benchmarks.jsonl",
+    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/orchestrator-official.jsonl",
+    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/platform-patterns.jsonl",
+    "/home/minhgv/code/deli/super-app-mini-app-store-standard/state/candidates/security-standards.jsonl"
+  ],
+  "raw_records": 108,
+  "unique_records": 108,
+  "json_errors": [],
+  "urls_total": 82,
+  "status_counts": {
+    "200": 82
+  },
+  "failed_urls": {}
+}

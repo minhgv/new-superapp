@@ -1,0 +1,12 @@
+# Generated and private files
+__pycache__/
+*.pyc
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.jks
+*credentials*
+*secret*
+*token*
