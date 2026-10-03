@@ -21,5 +21,12 @@
   "findings_line_count_before": 252,
   "findings_line_count_after": 266,
   "report": "/home/minhgv/mData/hermes_vps/super-app-mini-app-store-standard-report/17-iteration-20-resource-governance-abuse-resistance.md",
-  "public_repo_sync": "pending_iteration_20_validation"
+  "public_repo_sync": {
+    "status": "pushed_verified",
+    "repo": "https://github.com/minhgv/new-superapp.git",
+    "branch": "main",
+    "commit": "4a75de3931983c84a7fcb4fe41aee3c51f242fb4",
+    "staged_scope": ["report/*.md", "evidence/findings.jsonl", "evidence/validation-summary.json"],
+    "remote_verification": "git ls-remote origin refs/heads/main matched commit"
+  }
 }
