@@ -1,28 +1,25 @@
 {
-  "iteration": 15,
-  "canonical_findings": 231,
+  "iteration": 20,
+  "canonical_findings": 266,
   "canonical_json_errors": [],
   "candidate_files": [
-    "state/candidates/monetization-apple-settlement.jsonl",
-    "state/candidates/monetization-google-settlement.jsonl",
-    "state/candidates/monetization-ledger-reconciliation.jsonl"
+    "state/candidates/overload-control-rfc.jsonl",
+    "state/candidates/storage-quota-governance.jsonl",
+    "state/candidates/business-flow-abuse-controls.jsonl"
   ],
-  "candidate_records": 18,
-  "candidate_selected_records": 17,
-  "candidate_unique_source_urls_rechecked": 30,
+  "candidate_records": 14,
+  "candidate_selected_records": 14,
+  "candidate_unique_source_urls_rechecked": 14,
   "candidate_http_status_counts": {
-    "200": 30
+    "200": 14
   },
   "candidate_failed_urls": {},
-  "candidate_duplicate_records_rejected": 1,
-  "candidate_exact_url_overlap_with_canonical": [
-    "https://developer.android.com/google/play/billing/lifecycle",
-    "https://developer.android.com/google/play/billing/rtdn-reference"
-  ],
+  "candidate_duplicate_primary_url_records_rejected": 0,
+  "candidate_exact_url_overlap_with_canonical": [],
   "credentials_excluded": true,
   "append_only_findings_verified": true,
-  "findings_line_count_before": 214,
-  "findings_line_count_after": 231,
-  "worker_failures_recovered": 0,
-  "report": "/home/minhgv/mData/hermes_vps/super-app-mini-app-store-standard-report/14-iteration-15-commercial-settlement-governance.md"
+  "findings_line_count_before": 252,
+  "findings_line_count_after": 266,
+  "report": "/home/minhgv/mData/hermes_vps/super-app-mini-app-store-standard-report/17-iteration-20-resource-governance-abuse-resistance.md",
+  "public_repo_sync": "pending_iteration_20_validation"
 }

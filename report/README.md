@@ -1,8 +1,8 @@
 # Mini App Store Standard for a Super App
 
-**Research status:** Deli Deep iteration 15
-**Evidence records:** 231
-**Iteration 15 additions:** 17 commercial-settlement findings / 30 unique candidate source URLs, all rechecked HTTP 200; one duplicate primary URL rejected
+**Research status:** Deli Deep iteration 20
+**Evidence records:** 266
+**Iteration 20 additions:** 14 resource-governance/abuse-resistance findings / 14 unique primary URLs rechecked HTTP 200; no candidate URL overlap with canonical findings
 **Credential exclusion:** true; Google Sheet credentials and raw sheet content are not included
 **Input context:** Alibaba Cloud SuperApp/WindVane POC resource sheet, tab `Software Info` (`gid=58086397`)
 
@@ -24,6 +24,9 @@
 | 12 | [Iteration 7: localization and regionalization](12-iteration-7-localization-regionalization.md) | 10 findings on BCP 47/CLDR locale contracts, HTTP language negotiation, regional formatting and privacy-aware fallback |
 | 13 | [Iteration 14: age rating and child safety](13-iteration-14-age-rating-child-safety.md) | 5 findings on audience declarations, content ratings, child/mixed-audience capability policies, release re-review and host-only age signals |
 | 14 | [Iteration 15: commercial settlement governance](14-iteration-15-commercial-settlement-governance.md) | 17 findings on commerce eligibility/product identity, subscription/refund reconciliation, publisher payout evidence, reserves/disputes and provider-to-bank settlement |
+| 15 | [Iteration 18: identity, authentication and session contracts](15-iteration-18-identity-authentication-session.md) | 9 findings on OAuth authorization integrity, issuer/account binding, WebAuthn host boundaries, passkey step-up, token exchange, JWT audience validation, DPoP replay resistance and revocation |
+| 16 | [Iteration 19: host bridge and cross-context messaging](16-iteration-19-host-bridge-cross-context.md) | 12 findings on origin/recipient binding, structured clone limits, structured errors, JSON-RPC correlation, Android WebView bridge hardening, and Apple WKWebView content-world/reply/navigation controls |
+| 17 | [Iteration 20: resource governance and abuse resistance](17-iteration-20-resource-governance-abuse-resistance.md) | 14 findings on graded overload/fairness, storage partition/quota/eviction, adaptive abuse controls, provider idempotency, and hard-spend boundaries |
 
 ## Evidence rules
 

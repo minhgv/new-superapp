@@ -1,5 +1,7 @@
 # Executive Summary
 
+**Current evidence base:** 266 validated append-only findings through Deli Deep iteration 20. Iteration 20 adds 14 resource-governance and abuse-resistance findings from 14 HTTP-200-verified primary URLs; iteration 19's 12 host-bridge findings remain in its dedicated section.
+
 ## Decision
 
 A mini app store in a super app should be treated as a **trusted software supply-chain and lifecycle control plane**, not as a collection of marketing screens. The minimum viable standard must control publisher identity, immutable packages, capability declarations, automated checks, human review, staged rollout, rollback, audit evidence, and deprecation. Search, categories and ranking matter, but they must never outrank trust, compatibility or policy state.
@@ -19,6 +21,7 @@ The Alibaba POC context is a good fit for this model: its documentation separate
 ### P0 — before any external or broad release
 
 - Verified publisher identity, MFA, RBAC and abuse/security contact.
+- Host-owned, capability-scoped bridge contract: exact origin/recipient/frame binding, versioned bounded envelopes, structured machine-readable errors, request correlation/idempotency, deadlines/cancellation, and fail-closed teardown on navigation, renderer, quarantine or revocation events.
 - Immutable, content-addressed package with declared app ID, version, digest, entry point, host/runtime range and capabilities.
 - Signature verification and basic provenance/SBOM/secret/malware checks.
 - Manifest/schema/size/path validation and deterministic compatibility rejection before download.
@@ -43,9 +46,10 @@ The Alibaba POC context is a good fit for this model: its documentation separate
 - Accessibility conformance evidence, support SLAs and entitlement/monetization controls.
 - Per-artifact cache/freshness/invalidation policy with explicit offline fallback eligibility; measure cold/warm/offline performance by cohort and digest.
 - Commercial settlement contract: immutable host/provider product identity mapping, provider-event reconciliation, explicit refund/void/dispute/reserve states, publisher payout evidence, report-period close and bank-settlement control totals; keep provider-specific rules in adapters.
+- Identity and session contract: issuer-bound authorization requests, host-owned WebAuthn RP/origin policy, explicit account-linking confirmation, audience/resource-bound capabilities, sender-constrained high-risk sessions, opaque result handles, replay detection and revocation on logout/uninstall/quarantine/takedown.
 - Ranking/review integrity controls: disclose applicable ranking parameters, separate editorial/paid placement, preserve review provenance and provide moderation/appeal evidence.
 - Market-specific moderation governance: notice-and-action intake, reasoned decisions, proportionate suspension, publisher complaint/mediation, and transparent appeal records; label EU DSA/P2B and platform-policy scope rather than treating them as universal law.
-- Operational reliability contract: versioned SLO/SLI definitions, error-budget release policy, immutable cohort evidence, rollback target, incident command/postmortem workflow, telemetry schema compatibility, tenant quotas/isolation, and tested MTD/RTO/RPO by criticality tier.
+- Operational reliability and resource-governance contract: versioned SLO/SLI definitions, error-budget release policy, immutable cohort evidence, rollback target, incident command/postmortem workflow, telemetry schema compatibility, tenant/app quotas and layered isolation, graded fair-share overload control, storage durability/eviction classes, operation-risk friction, provider idempotency, hard-spend reserves, and tested MTD/RTO/RPO by criticality tier.
 - Portable federation contract: versioned manifest/Schema.org projections, digest-bound SPDX/CycloneDX/VEX/attestation references, explicit freshness/trust/review state, and machine-readable publisher registration/resource-capability negotiation.
 
 ### P2 — optimization
@@ -63,4 +67,4 @@ The POC should be assessed against these gates:
 
 ## Recommendation
 
-Approve a pilot that implements the P0 profile for 3–5 representative miniapps, including one sensitive-data app and one partner-owned app. Do not standardize ranking or monetization until trust, compatibility, review and rollback evidence is measurable.
+Approve a pilot that implements the P0 profile for 3–5 representative miniapps, including one sensitive-data app and one partner-owned app. Do not standardize ranking or monetization until trust, compatibility, review and rollback evidence is measurable. For identity-sensitive mini-apps, add the iteration-18 authentication/session conformance fixture before external onboarding. For any WebView/native mini-app, add the iteration-19 bridge conformance fixture before granting privileged host capabilities.
