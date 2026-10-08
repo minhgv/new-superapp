@@ -1,4 +1,4 @@
-# Generated and private files
+# Private and credential file patterns (strict exact files)
 __pycache__/
 *.pyc
 .env
@@ -7,8 +7,8 @@ __pycache__/
 *.key
 *.p12
 *.jks
-*credentials*
-*secret*
+credentials.json
+secrets.json
 *.token
 *token.txt
 *token.json
