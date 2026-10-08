@@ -1,6 +1,6 @@
 # Executive Summary
 
-**Current evidence base:** 266 validated append-only findings through Deli Deep iteration 20. Iteration 20 adds 14 resource-governance and abuse-resistance findings from 14 HTTP-200-verified primary URLs; iteration 19's 12 host-bridge findings remain in its dedicated section.
+**Current evidence base:** 266 validated append-only findings through Deli Deep iteration 22. Iteration 20 adds 14 resource-governance and abuse-resistance findings from 14 HTTP-200-verified primary URLs; iteration 19's 12 host-bridge findings remain in its dedicated section.
 
 ## Decision
 

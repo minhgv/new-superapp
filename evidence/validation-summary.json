@@ -1,32 +1,18 @@
 {
-  "iteration": 20,
-  "canonical_findings": 266,
-  "canonical_json_errors": [],
-  "candidate_files": [
-    "state/candidates/overload-control-rfc.jsonl",
-    "state/candidates/storage-quota-governance.jsonl",
-    "state/candidates/business-flow-abuse-controls.jsonl"
-  ],
-  "candidate_records": 14,
-  "candidate_selected_records": 14,
-  "candidate_unique_source_urls_rechecked": 14,
-  "candidate_http_status_counts": {
-    "200": 14
+  "generated_at": "2026-10-08T14:27:09.066540+00:00",
+  "iteration": 25,
+  "total_findings": 326,
+  "unique_urls_tracked": 385,
+  "evidence_levels": {
+    "unknown": 266,
+    "normative_standard": 44,
+    "industry_standard": 6,
+    "official_platform_practice": 4,
+    "platform_specification": 2,
+    "security_standard": 2,
+    "platform_practice": 2
   },
-  "candidate_failed_urls": {},
-  "candidate_duplicate_primary_url_records_rejected": 0,
-  "candidate_exact_url_overlap_with_canonical": [],
-  "credentials_excluded": true,
-  "append_only_findings_verified": true,
-  "findings_line_count_before": 252,
-  "findings_line_count_after": 266,
-  "report": "/home/minhgv/mData/hermes_vps/super-app-mini-app-store-standard-report/17-iteration-20-resource-governance-abuse-resistance.md",
-  "public_repo_sync": {
-    "status": "pushed_verified",
-    "repo": "https://github.com/minhgv/new-superapp.git",
-    "branch": "main",
-    "commit": "4a75de3931983c84a7fcb4fe41aee3c51f242fb4",
-    "staged_scope": ["report/*.md", "evidence/findings.jsonl", "evidence/validation-summary.json"],
-    "remote_verification": "git ls-remote origin refs/heads/main matched commit"
-  }
+  "topics_count": 291,
+  "credential_scan": "CLEAN",
+  "jsonl_integrity": "VALID"
 }
