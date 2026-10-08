@@ -1,18 +1,23 @@
 {
-  "generated_at": "2026-10-08T14:27:09.066540+00:00",
-  "iteration": 25,
-  "total_findings": 326,
-  "unique_urls_tracked": 385,
+  "iteration": 30,
+  "milestone": 30,
+  "ts": "2026-10-08T16:27:05.147757+00:00",
+  "total_findings": 401,
+  "unique_urls": 341,
   "evidence_levels": {
     "unknown": 266,
-    "normative_standard": 44,
-    "industry_standard": 6,
+    "normative_standard": 85,
+    "industry_standard": 7,
     "official_platform_practice": 4,
     "platform_specification": 2,
-    "security_standard": 2,
-    "platform_practice": 2
+    "security_standard": 3,
+    "platform_practice": 18,
+    "regulatory_framework": 5,
+    "consortium_standard": 5,
+    "vendor_specification": 1,
+    "candidate_recommendation": 5
   },
-  "topics_count": 291,
-  "credential_scan": "CLEAN",
-  "jsonl_integrity": "VALID"
+  "jsonl_parse_valid": true,
+  "credentials_excluded": true,
+  "status": "passed"
 }

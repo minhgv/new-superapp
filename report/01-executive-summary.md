@@ -1,6 +1,6 @@
 # Executive Summary
 
-**Current evidence base:** 266 validated append-only findings through Deli Deep iteration 22. Iteration 20 adds 14 resource-governance and abuse-resistance findings from 14 HTTP-200-verified primary URLs; iteration 19's 12 host-bridge findings remain in its dedicated section.
+**Current evidence base:** 401 validated append-only findings through Deli Deep iteration 30 (Milestone 30). Iteration 30 adds 15 next-generation transport, WebGPU compute sandboxing, and multimodal spatial computing findings from 23 HTTP-200-verified primary URLs; all previous iteration findings remain intact in their respective sections.
 
 ## Decision
 
