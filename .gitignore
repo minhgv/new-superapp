@@ -9,4 +9,6 @@ __pycache__/
 *.jks
 *credentials*
 *secret*
-*token*
+*.token
+*token.txt
+*token.json

@@ -1,6 +1,6 @@
 # Executive Summary
 
-**Current evidence base:** 401 validated append-only findings through Deli Deep iteration 30 (Milestone 30). Iteration 30 adds 15 next-generation transport, WebGPU compute sandboxing, and multimodal spatial computing findings from 23 HTTP-200-verified primary URLs; all previous iteration findings remain intact in their respective sections.
+**Current evidence base:** 416 validated append-only findings through Deli Deep iteration 31. Iteration 31 adds 15 findings across Multi-Process WebView Architecture & Site Isolation (Chromium OOPIF, Android WebViewRenderProcessClient, Apple WebKit WKProcessPool), Delta Updates & Differential Compression (RFC 3284 VCDIFF, RFC 8878 Zstandard, Apple App Store Rule 4.7 OTA governance), and Distributed Tracing & Cross-Tier Telemetry (W3C Trace Context, W3C Baggage, OpenTelemetry JSAPI bridge context propagation, and GDPR/OWASP PII data scrubbing) from 13 HTTP-200-verified primary URLs; all previous iteration findings remain intact in their respective sections.
 
 ## Decision
 
