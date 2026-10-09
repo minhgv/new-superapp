@@ -1,9 +1,9 @@
 {
-  "iteration": 70,
-  "total_findings": 1001,
+  "iteration": 75,
+  "total_findings": 1076,
   "status": "valid",
   "stale_count": 0,
-  "last_validated": "2026-10-09T05:45:00.000000+00:00",
-  "verified_milestone": 70,
+  "last_validated": "2026-10-09T07:14:19.480629+00:00",
+  "verified_milestone": 75,
   "all_citations_rechecked_http_200": true
 }
