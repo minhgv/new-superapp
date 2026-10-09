@@ -1,7 +1,12 @@
 # Mini App Store Standard for a Super App
 
-**Research status:** Deli Deep iteration 95
-**Evidence records:** 1,376
+> **Bộ đặc tả (specification):** [`spec/README.md`](spec/README.md) — 17 tài liệu chuẩn hóa
+> (SPEC-00…SPEC-13 + 2 phụ lục), 427 yêu cầu RFC-2119 và 50 cổng tuân thủ,
+> được tổng hợp từ các báo cáo nghiên cứu trong repo này. Đây là tài liệu để triển khai;
+> phần dưới đây là nhật ký nghiên cứu gốc.
+
+**Research status:** Deli Deep iteration 105
+**Evidence records:** 1,526
 **Iteration 65 additions:** 15 findings across Service Worker Navigation Preload (parallel network dispatch, Service-Worker-Navigation-Preload header, preloadResponse offline fallback); WebGL 2.0 & Graphics Context Loss Recovery (webglcontextlost preventDefault, webglcontextrestored asset reconstruction, WEBGL_lose_context test automation, isContextLost render loop guards); and WebAssembly Component Model & WASI 0.2 (WIT IDL, Canonical ABI memory safety, capability-safe system interfaces [wasi:filesystem/wasi:http], W3C Wasm Core linear memory quotas) / 15 unique URLs rechecked HTTP 200
 **Iteration 63 additions:** 15 findings across WHATWG FileSystemObserver & Storage Event Governance (asynchronous change records, recursive directory watching, kernel watcher reclamation, OPFS SQLite WAL coordination); WebAuthn Level 3 Extensions & Passkey Hardware Binding (largeBlob authenticator-bound decentralized storage, devicePubKey hardware enclave attestation, conditional mediation form autofill, FIDO CTAP 2.1 hybrid transport cross-device pairing, RP ID scoping); and IETF RFC 9457 & RFC 9440 API Resilience Contracts (Problem Details for HTTP APIs application/problem+json obsoleting RFC 7807, Client-Cert header field for edge mTLS forwarding, trace_id problem extensions, RFC 8705 certificate-bound token verification, graceful UI degradation) / 19 unique URLs rechecked HTTP 200
 **Iteration 62 additions:** 15 findings across WICG Soft Navigations & SPA Route Detection (heuristic detection algorithm, PerformanceSoftNavigationTiming, Core Web Vitals metric resets, task attribution); WICG Visual Viewport API & Dynamic Mobile Geometry (dual viewport architecture, virtual keyboard onresize adaptation, pinch-to-zoom scale invariance, compositor scroll sync, host capsule bounding rect integration); and WHATWG Shared Workers & Cross-Context Concurrency (same-origin background scope, MessagePort handshake, singleton WebSocket/SSE multiplexing, in-memory state coordination with W3C Web Locks, watchdog resource limits) / 15 unique URLs rechecked HTTP 200

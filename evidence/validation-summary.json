@@ -1,9 +1,9 @@
 {
-  "total_findings": 1451,
-  "total_unique_urls": 1189,
-  "total_categories": 141,
-  "categories": {
-    "uncategorized": 641,
+  "iteration": 105,
+  "total_findings": 1526,
+  "unique_urls": 1247,
+  "categories_distribution": {
+    "unknown": 641,
     "Networking & Transport Standards": 5,
     "Graphics & Compute Sandboxing": 10,
     "Multimodal & Media Standards": 5,
@@ -143,9 +143,21 @@
     "task-scheduling-and-concurrency": 5,
     "box-sizing-and-layout-sandboxing": 5,
     "media-casting-and-peripheral-governance": 10,
-    "window-controls-and-screen-governance": 10
+    "window-controls-and-screen-governance": 10,
+    "peripheral-and-input-governance": 5,
+    "voice-and-conversational-governance": 5,
+    "audio-and-multimedia-governance": 20,
+    "privacy-and-permissions-governance": 5,
+    "multi-display-and-hardware-governance": 5,
+    "offline-and-discovery-governance": 5,
+    "performance-telemetry-and-lifecycle-governance": 6,
+    "computer-vision-and-peripheral-governance": 4,
+    "audio-hardware-and-peripheral-governance": 5,
+    "concurrency-and-state-synchronization": 5,
+    "windowing-and-display-governance": 5,
+    "os-integration-and-application-lifecycle": 5
   },
-  "evidence_levels": {
+  "evidence_levels_distribution": {
     "unknown": 311,
     "normative_standard": 223,
     "industry_standard": 24,
@@ -167,7 +179,7 @@
     "industry_practice": 3,
     "community_standard": 5,
     "open_source_framework": 1,
-    "official_standard": 157,
+    "official_standard": 161,
     "best_practice_recommendation": 7,
     "draft_standard": 7,
     "vendor_standard": 1,
@@ -205,12 +217,14 @@
     "WHATWG HTML / Fetch Living Standard & MDN Web Docs": 1,
     "WHATWG Fetch Living Standard & MDN Web Docs": 1,
     "MDN Web Docs & Web Performance Working Group Guidelines": 1,
-    "official-specification": 243,
-    "official-documentation": 12
+    "official-specification": 288,
+    "official-documentation": 12,
+    "developer_documentation": 10,
+    "specification_draft": 1,
+    "standards_specification": 2,
+    "official_documentation": 13
   },
-  "last_updated": "2026-10-09T15:19:33.534774+00:00",
-  "sanitized": true,
-  "credentials_excluded": true,
-  "iteration": 100,
-  "milestone": "Milestone 100 - Fullscreen, Pointer Lock 2.0 & Presentation API"
+  "status": "clean",
+  "credentials_scanned": true,
+  "timestamp": "2026-10-09T16:55:00Z"
 }
