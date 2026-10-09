@@ -1,7 +1,9 @@
 {
-  "total_findings": 1376,
+  "total_findings": 1451,
+  "total_unique_urls": 1189,
+  "total_categories": 141,
   "categories": {
-    "unknown": 641,
+    "uncategorized": 641,
     "Networking & Transport Standards": 5,
     "Graphics & Compute Sandboxing": 10,
     "Multimodal & Media Standards": 5,
@@ -128,7 +130,20 @@
     "box-alignment-and-layout-isolation": 5,
     "typographic-decoration-and-emphasis": 5,
     "payment-request-api-and-transaction-orchestration": 5,
-    "web-platform-rendering-and-graphics": 30
+    "web-platform-rendering-and-graphics": 40,
+    "multilingual-and-typographic-layout": 5,
+    "responsive-media-and-resolution-adaptation": 5,
+    "paged-media-and-export-sandboxing": 5,
+    "semantic-metadata-and-indexing": 5,
+    "rendering-and-box-layout": 4,
+    "generated-content-and-typography": 6,
+    "url-parsing-and-navigation": 2,
+    "media-and-navigation-sandboxing": 1,
+    "dom-traversal-and-range-sandboxing": 2,
+    "task-scheduling-and-concurrency": 5,
+    "box-sizing-and-layout-sandboxing": 5,
+    "media-casting-and-peripheral-governance": 10,
+    "window-controls-and-screen-governance": 10
   },
   "evidence_levels": {
     "unknown": 311,
@@ -190,10 +205,12 @@
     "WHATWG HTML / Fetch Living Standard & MDN Web Docs": 1,
     "WHATWG Fetch Living Standard & MDN Web Docs": 1,
     "MDN Web Docs & Web Performance Working Group Guidelines": 1,
-    "official-specification": 168,
+    "official-specification": 243,
     "official-documentation": 12
   },
+  "last_updated": "2026-10-09T15:19:33.534774+00:00",
   "sanitized": true,
-  "no_credentials": true,
-  "latest_iteration": 95
+  "credentials_excluded": true,
+  "iteration": 100,
+  "milestone": "Milestone 100 - Fullscreen, Pointer Lock 2.0 & Presentation API"
 }
