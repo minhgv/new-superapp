@@ -1,11 +1,9 @@
 {
-  "generated_at": "2026-10-09T18:37:17.540434+00:00",
-  "iteration": 110,
-  "total_findings": 1601,
-  "status": "fully_validated",
-  "zero_secrets_detected": true,
-  "citations_recheck_status": "all_passed_http_200",
-  "evidence_levels": {
+  "generated_at": "2026-10-09T20:16:49.877654+00:00",
+  "iteration": 115,
+  "total_findings": 1676,
+  "distinct_urls": 1395,
+  "evidence_level_distribution": {
     "unknown": 311,
     "normative_standard": 223,
     "industry_standard": 24,
@@ -27,7 +25,7 @@
     "industry_practice": 3,
     "community_standard": 5,
     "open_source_framework": 1,
-    "official_standard": 206,
+    "official_standard": 273,
     "best_practice_recommendation": 7,
     "draft_standard": 7,
     "vendor_standard": 1,
@@ -71,10 +69,12 @@
     "specification_draft": 1,
     "standards_specification": 4,
     "official_documentation": 26,
-    "living-standard": 1
+    "living-standard": 1,
+    "platform_documentation": 5,
+    "technical_standard": 3
   },
   "category_distribution": {
-    "unknown": 641,
+    "uncategorized": 641,
     "Networking & Transport Standards": 5,
     "Graphics & Compute Sandboxing": 10,
     "Multimodal & Media Standards": 5,
@@ -233,10 +233,23 @@
     "performance-and-runtime-observability": 5,
     "layout-containment-and-rendering-isolation": 5,
     "runtime-environment-and-security-sandboxing": 6,
-    "runtime-environment-and-network-governance": 5,
+    "runtime-environment-and-network-governance": 14,
     "runtime-environment-and-accessibility-standards": 4,
     "runtime-environment-and-typography-standards": 5,
     "runtime-environment-and-theming-standards": 5,
-    "runtime-environment-and-viewport-standards": 20
-  }
+    "runtime-environment-and-viewport-standards": 20,
+    "hardware-peripheral-and-sensor-governance": 5,
+    "network-transport-and-data-synchronization": 5,
+    "component-styling-and-layout-sandboxing": 7,
+    "network-and-transport-layer-sandboxing": 2,
+    "multimedia-and-hardware-sandboxing": 11,
+    "security-privacy-and-compliance": 6,
+    "runtime-environment-and-multimedia-governance": 5,
+    "runtime-environment-and-mobile-layout-standards": 10,
+    "runtime-environment-and-graphics-sandboxing": 5,
+    "runtime-environment-and-telemetry-governance": 5,
+    "runtime-environment-and-wasm-sandboxing": 5
+  },
+  "status": "VALIDATED_CLEAN",
+  "credentials_scanned_clean": true
 }
