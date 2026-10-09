@@ -1,8 +1,5 @@
 {
-  "iteration": 90,
-  "total_findings": 1301,
-  "unique_urls": 1039,
-  "categories_count": 118,
+  "total_findings": 1376,
   "categories": {
     "unknown": 641,
     "Networking & Transport Standards": 5,
@@ -121,7 +118,17 @@
     "media-pipeline-and-hardware-sandboxing": 5,
     "graphics-and-display-sandboxing": 20,
     "runtime-concurrency-and-worker-isolation": 5,
-    "input-and-form-security": 5
+    "input-and-form-security": 5,
+    "styling-and-localization-architecture": 5,
+    "dom-and-text-interaction-sandboxing": 5,
+    "mobile-input-and-gesture-sandboxing": 5,
+    "dom-traversal-and-security-filtering": 5,
+    "multilingual-bidi-and-logical-layout": 5,
+    "declarative-motion-and-spatial-trajectories": 5,
+    "box-alignment-and-layout-isolation": 5,
+    "typographic-decoration-and-emphasis": 5,
+    "payment-request-api-and-transaction-orchestration": 5,
+    "web-platform-rendering-and-graphics": 30
   },
   "evidence_levels": {
     "unknown": 311,
@@ -183,9 +190,10 @@
     "WHATWG HTML / Fetch Living Standard & MDN Web Docs": 1,
     "WHATWG Fetch Living Standard & MDN Web Docs": 1,
     "MDN Web Docs & Web Performance Working Group Guidelines": 1,
-    "official-specification": 93,
+    "official-specification": 168,
     "official-documentation": 12
   },
-  "status": "verified",
-  "timestamp": "2026-10-09T12:12:00.000000+00:00"
+  "sanitized": true,
+  "no_credentials": true,
+  "latest_iteration": 95
 }
