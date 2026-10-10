@@ -40,8 +40,8 @@ Mục tiêu cốt lõi:
 
 ### 3.1 Tích hợp Host SDK & Khởi tạo Container (Android / iOS)
 
-> **REQ-14-001** (MUST · C1) — Host Android **PHẢI** tích hợp core SDK và WindVane SDK (`com.aliyun.emas.suite.foundation:windvane-mini-app:1.4.0`) từ kho Maven private của Apsara Stack được chỉ định.
-> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1` · *Kiểm chứng:* static
+> **REQ-14-001** (MUST · C1) — Host Android **PHẢI** tích hợp core SDK và WindVane SDK từ kho Maven của POC với đúng phiên bản khai báo: `com.aliyun.emas.suite.foundation:mini-app-adapter:1.8.9.2` và `com.aliyun.emas.suite.foundation:windvane-mini-app:1.8.9.2`; kho Maven: `https://nexus-console.superapp-intl.com/repository/maven`.
+> *Nguồn:* POC resource sheet (`gid=58086397`), `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1` · *Kiểm chứng:* static
 
 > **REQ-14-002** (MUST · C1) — Host Android **PHẢI** khởi tạo cấu hình qua `MiniAppInitConfig.Builder()`, bật cờ `setUseWindVane(true)` (hoặc `setUseUniApp(true)` khi dùng uni-app) và cung cấp đủ các tham số cấu hình: `accessKey`, `secretKey`, `host`, `appCode` từ Application Open Platform.
 > *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1` · *Kiểm chứng:* runtime
@@ -52,16 +52,29 @@ Mục tiêu cốt lõi:
 > **REQ-14-004** (MUST · C1) — Quy tắc làm mờ mã nguồn (R8/ProGuard) của Host Android **PHẢI** giữ nguyên (keep) toàn bộ namespace `android.taobao.windvane.jsbridge.api.*` để bảo đảm cơ chế phản chiếu (reflection) của JSBridge hoạt động chính xác.
 > *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1` · *Kiểm chứng:* static
 
-> **REQ-14-005** (MUST · C1) — Host iOS **PHẢI** tích hợp `EMASMiniAppAdapter` cùng pod container tương ứng (`EMASWindVaneMiniApp` hoặc `EMASUniappMiniApp`); cờ cấu hình `useWindVane` hoặc `useUniApp` trong mã nguồn **PHẢI** khớp tuyệt đối với pod đã khai báo trong Podfile.
-> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-access-11` · *Kiểm chứng:* static
+> **REQ-14-005** (MUST · C1) — Host iOS **PHẢI** tích hợp `EMASServiceManager` và `EMASMiniAppAdapter` cùng pod container tương ứng (`EMASWindVaneMiniApp` hoặc `EMASUniappMiniApp`); cờ cấu hình `useWindVane` hoặc `useUniApp` trong mã nguồn **PHẢI** khớp tuyệt đối với pod đã khai báo trong Podfile. Phiên bản khai báo của POC: `pod 'EMASServiceManager'`, `pod 'EMASMiniAppAdapter', '1.1.3'`, `pod 'EMASWindVaneMiniApp', '1.2.4'`; kho specs: `https://gitlab-console.superapp-intl.com/emas-ios/emas-specs.git`.
+> *Nguồn:* POC resource sheet (`gid=58086397`), `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-access-11` · *Kiểm chứng:* static
 
 > **REQ-14-006** (MUST · C1) — Host iOS **PHẢI** khởi tạo `EMASMiniAppInitConfig` và đăng ký protocol `EMASMiniAppService` thông qua `EMASServiceManager sharedInstance` ngay tại phương thức `application(_:didFinishLaunchingWithOptions:)` trước mọi chức năng khác.
 > *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-access-11` · *Kiểm chứng:* runtime
 
-> **REQ-14-007** (MUST · C1) — Tham số cấu hình `host` của container trên cả Android và iOS **PHẢI** trỏ về domain hợp lệ của Application Open Platform và bắt buộc sử dụng giao thức HTTPS.
-> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1`, `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-access-11` · *Kiểm chứng:* runtime
+> **REQ-14-007** (MUST · C1) — Tham số cấu hình `host` của container trên cả Android và iOS **PHẢI** trỏ về domain hợp lệ của Application Open Platform và bắt buộc sử dụng giao thức HTTPS. Trong POC hiện tại: console `https://poc.superapp-intl.com/superapp#/login`, còn địa chỉ khởi tạo container và Open API đều là `https://poc.superapp-intl.com`.
+> *Nguồn:* POC resource sheet (`gid=58086397`), `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-access-1`, `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-access-11` · *Kiểm chứng:* runtime
 
-### 3.2 Giao thức JSBridge & Bảng ánh xạ 22 WindVane API
+### 3.2 Hai tầng của bề mặt JSAPI: `wv.*` (gọi) và class `WV*` (triển khai)
+
+> **Phân biệt bắt buộc:** bộ spec này phân biệt **hai tầng** của cùng một bề mặt:
+>
+> - **Tầng 1 — JS namespace `wv.<method>`**: đây là API mà nhà phát triển mini-app gọi
+>   từ mã JavaScript. Ví dụ đã xác nhận: **`wv.getAuthCode`**.
+> - **Tầng 2 — class `android.taobao.windvane.jsbridge.api.WV*`**: đây là **tên class
+>   triển khai native trên Android** (tra cứu được trong keep rules R8/ProGuard), KHÔNG
+>   phải tên API bề mặt. Trên iOS là các native handler tương ứng.
+>
+> Bảng ánh xạ 22 class ở dưới là **tầng 2** — dùng để phân loại quyền hạn và để cấu hình
+> keep khi obfuscate, không phải để nhà phát triển gọi trực tiếp.
+
+Bảng phân loại quyền theo 22 class triển khai Android:
 
 | Lớp JSBridge (WindVane) | Nhóm năng lực | Mức nhạy cảm | Ràng buộc quyền & Chính sách | Tham chiếu SPEC |
 |---|---|---|---|---|
@@ -157,6 +170,26 @@ Mục tiêu cốt lõi:
 
 ---
 
+### 3.5 Nền tảng Host mở rộng (Flutter / ReactNative) & Ủy quyền người dùng
+
+> **REQ-14-029** (MUST · C1) — Host **Flutter** **PHẢI** giao tiếp với native qua platform channel; khai báo `MethodChannel` với tên channel tường minh (ví dụ `windvane_miniapp`, tùy chỉnh được) và route mọi lời gọi sang native handler tương ứng. Trên Android kế thừa `FlutterActivity` và cài `configureFlutterEngine`; trên iOS kế thừa `FlutterViewController` (ví dụ `EMASMainViewController`).
+> *Nguồn:* POC resource sheet (`gid=58086397`), `https://www.alibabacloud.com/help/en/superapp/latest/flutter-access-1` · *Kiểm chứng:* runtime
+
+> **REQ-14-030** (MUST · C1) — Host **ReactNative** **PHẢI** cung cấp module cầu nối native với ngữ nghĩa tương đương host Android/iOS. `[PROPOSAL]` — chưa tìm được nguồn xác thực cho chi tiết module; cần hãng xác nhận.
+> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/latest/reactnative-app-access-windvane-applet-container-1` · *Kiểm chứng:* runtime
+
+> **REQ-14-031** (MUST · C3) — Mã nguồn mini-app **PHẢI** gọi năng lực native qua JS namespace `wv.<method>`; **KHÔNG** được tham chiếu trực tiếp tới class `android.taobao.windvane.jsbridge.api.WV*` vì đó là triển khai nội bộ của host.
+> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/latest/wv-getauthcode-1` · *Kiểm chứng:* static
+
+> **REQ-14-032** (MUST · C3) — Luồng ủy quyền người dùng **PHẢI** dùng **`wv.getAuthCode`** để hiển thị pop-up xin phép và nhận về `authCode`. Mini-app **CHỈ ĐƯỢC** gọi khi người dùng chủ động tương tác và đã hiểu lý do cần quyền; **KHÔNG** được gọi ngay khi mini-app vừa khởi động.
+> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/latest/wv-getauthcode-1` · *Kiểm chứng:* review
+
+> **REQ-14-033** (MUST · C2) — Server của nhà phát triển **PHẢI** gửi `authCode` lên Open API **`/v1/authorizations/applyToken`** để đổi lấy thông tin người dùng đã ủy quyền (`user_id`, `avatar`, `nickname`, `mobile number`, `region`, `gender`, `date of birth`). `authCode` **KHÔNG** được xử lý ở client.
+> *Nguồn:* `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/v1-authorizations-applytoken-1` · *Kiểm chứng:* runtime
+
+> **REQ-14-034** (SHOULD · C3) — Công cụ phát triển **NÊN** dùng đúng phiên bản plugin IDE của POC (`emas-mini-app-plugin-0.1.1.vsix`) tải từ portal tài nguyên; thông tin xác thực truy cập portal nằm trong POC resource sheet và **KHÔNG** được đưa vào tài liệu này hay mã nguồn.
+> *Nguồn:* POC resource sheet (`gid=58086397`), `https://www.alibabacloud.com/help/en/superapp/latest/installing-the-plug-in` · *Kiểm chứng:* static
+
 ## 4. Ghi chú triển khai (informative)
 
 ### 4.1 Khởi tạo Container trên Android và iOS
@@ -205,7 +238,7 @@ config.appCode = CONFIG_APP_CODE;
 
 ## 5. Tiêu chí tuân thủ
 
-- [ ] Host Android tích hợp đúng SDK WindVane 1.4.0 và giữ cấu hình ProGuard cho `android.taobao.windvane.jsbridge.api.*`.
+- [ ] Host Android tích hợp đúng SDK WindVane (`mini-app-adapter:1.8.9.2` + `windvane-mini-app:1.8.9.2`) và giữ cấu hình ProGuard cho `android.taobao.windvane.jsbridge.api.*`.
 - [ ] Host iOS hoàn tất khởi tạo `EMASMiniAppInitConfig` tại `didFinishLaunchingWithOptions`.
 - [ ] 22 lớp WindVane JSBridge API được kiểm soát đúng ranh giới phân quyền nhạy cảm và ràng buộc foreground.
 - [ ] API cảm biến và thông số pin được áp dụng lượng tử hóa dữ liệu và kẹp tần số đọc.
@@ -234,3 +267,37 @@ config.appCode = CONFIG_APP_CODE;
 6. Alibaba Cloud — Release Version: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/user-guide/release-version` (Cập nhật: 18/04/2026)
 7. Báo cáo nguồn trong repository: `report/01-executive-summary.md`, `report/06-gaps-validation-plan.md`, `report/16-iteration-19-host-bridge-cross-context.md`, `report/18-iteration-22-w3c-miniapp-tuf-device-governance.md`, `report/20-iteration-24-app-identity-secure-storage-network.md`, `report/46-iteration-50-w3c-miniapp-suite-bluetooth-nfc-sensors.md`.
 8. Đặc tả kỹ thuật liên quan: `SPEC-01`, `SPEC-02`, `SPEC-03`, `SPEC-04`, `SPEC-06`, `SPEC-07`, `SPEC-08`, `SPEC-10`, `SPEC-13`.
+
+### 7.1 Nguồn dữ liệu & mối quan hệ thẩm quyền
+
+Bộ spec này dùng **hai loại nguồn**, phân biệt rõ để tránh nhầm lẫn:
+
+| Loại nguồn | Phạm vi thẩm quyền | Ghi chú |
+|---|---|---|
+| **POC resource sheet** (`gid=58086397` và `gid=1488955061`) | Cấu hình triển khai POC cụ thể: phiên bản SDK, kho Maven/CocoaPods, endpoint, phiên bản plugin IDE, repo demo | Thẩm quyền CAO NHẤT cho cấu hình POC; do dự án cung cấp nội bộ |
+| **Tài liệu Alibaba Cloud công khai** | Hành vi API, hợp đồng tích hợp, luồng phát hành | URL tại mục 7.2; tất cả đã kiểm chứng HTTP 200 |
+
+POC resource sheet **chứa thông tin xác thực** truy cập portal và GitLab. Các giá trị đó
+**KHÔNG** được đưa vào tài liệu này hay mã nguồn — xem `REQ-14-034`.
+
+### 7.2 Tài liệu Alibaba Cloud công khai (tab `gid=1488955061`, tất cả HTTP 200)
+
+- SuperApp tổng quan: `https://www.alibabacloud.com/help/en/superapp/latest/introduction-to-superapp-1`
+- Tích hợp container (Android): `https://www.alibabacloud.com/help/en/superapp/latest/android-access`
+- Android SDK Release Notes: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/android-sdk-release-notes-1`
+- Tích hợp container (iOS): `https://www.alibabacloud.com/help/en/superapp/latest/ios-access`
+- iOS SDK Release Notes: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/ios-sdk-release-notes-1`
+- Tích hợp container (Flutter): `https://www.alibabacloud.com/help/en/superapp/latest/flutter-access-1`
+- Tích hợp container (ReactNative): `https://www.alibabacloud.com/help/en/superapp/latest/reactnative-app-access-windvane-applet-container-1`
+- Phát triển WindVane miniapp: `https://www.alibabacloud.com/help/en/superapp/latest/overview`
+- Quản lý miniapp bằng Open Platform: `https://www.alibabacloud.com/help/en/superapp/latest/overview-2`
+- `wv.getAuthCode` (JSAPI): `https://www.alibabacloud.com/help/en/superapp/latest/wv-getauthcode-1`
+- `/v1/authorizations/applyToken` (Open API): `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/v1-authorizations-applytoken-1`
+- Thực hành chuẩn kỹ thuật: `https://www.alibabacloud.com/help/en/superapp/latest/superapp-technical-standards-implementation-best-practices-1`
+- Phát hành H5 thành Miniapp: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/use-cases/h5-application-released-as-superapp-applet`
+- Mời đối tác thứ ba: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/user-guide/invite-thirdparty-space`
+- Mời thành viên vào workspace: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/user-guide/invite-members-to-space`
+- Gắn dự án miniapp vào SuperApp: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/associated-emas-1`
+- Xem trước và gỡ lỗi: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/debugging`
+- Cài đặt plugin IDE: `https://www.alibabacloud.com/help/en/superapp/latest/installing-the-plug-in`
+- Gửi log / data reporting: `https://www.alibabacloud.com/help/en/superapp/superapp-bap-public-intl/use-cases/plug-in-development-plug-in-development-for-small-program-data-reporting`

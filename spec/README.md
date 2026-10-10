@@ -85,6 +85,7 @@ Yêu cầu **không có nguồn** là đề xuất kiến trúc (proposal) của
 | 1.0.0 | 2026-10 | Tổng hợp lần đầu từ các báo cáo nghiên cứu (tới iteration 95) |
 | 1.1.0 | 2026-10 | Bổ sung 50 báo cáo mới (report/92…report/145): OAuth/OIDC, danh tính số, chứng thực phần cứng, C2PA/SCITT, PNA, WAI-ARIA, IXDTF. Thêm cổng G5. |
 | 1.2.0 | 2026-10 | Thêm SPEC-14 (WindVane/JSAPI conformance) + APPENDIX-C (đối chiếu POC Alibaba/WindVane), xây từ tài liệu chính thức Alibaba Cloud. Lấp khoảng trống đã ghi nhận ở report/06. |
+| 1.2.1 | 2026-10 | Đối soát SPEC-14 + APPENDIX-C theo **POC resource sheet** (`gid=58086397`, `gid=1488955061`): sửa phiên bản SDK Android `1.8.9.2` / iOS `EMASServiceManager`+`1.1.3`+`1.2.4`, endpoint `poc.superapp-intl.com`, tách mô hình JSAPI 2 tầng (`wv.*` vs class `WV*`), thêm host Flutter/ReactNative, thêm `wv.getAuthCode` + `/v1/authorizations/applyToken`. |
 
 Trạng thái hiện tại: **Draft**. Bộ tài liệu sẽ được nâng phiên bản khi có thêm bằng chứng
 hoặc quyết định kiến trúc mới. Các phát hiện lịch sử không bị ghi đè; chỉ bổ sung.
