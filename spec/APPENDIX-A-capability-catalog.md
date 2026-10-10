@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | ID | `APPENDIX-A` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft — tài liệu tham khảo |
 | Mục đích | Tra cứu năng lực → báo cáo nguồn → SPEC phụ trách |
 | Nguồn | 44 báo cáo chuyên đề (`report/48` … `report/91`) |
@@ -413,7 +413,79 @@ Năng lực  →  Báo cáo nguồn  →  SPEC phụ trách  →  Mức hỗ tr�
 
 ---
 
-## 4. Ghi chú
+## 5. Bổ sung từ nhóm báo cáo mới (report/92 … report/145)
+
+Các năng lực sau **chưa** có trong bảng ở mục 2–3, được bổ sung từ 50 báo cáo mới.
+
+| Năng lực | Mô tả | Báo cáo | SPEC | Mức |
+|---|---|---|---|---|
+| OAuth 2.1 + PKCE | Đường cơ sở ủy quyền, S256 bắt buộc | `125`, `127` | `SPEC-06` | MUST |
+| DPoP (RFC 9449) | Token gắn người gửi | `125` | `SPEC-06` | SHOULD |
+| PAR (RFC 9126) | Đẩy tham số ủy quyền lên server | `127` | `SPEC-06` | SHOULD |
+| JAR (RFC 9101) | Yêu cầu ủy quyền được ký | `124` | `SPEC-06` | SHOULD |
+| JWT BCP (RFC 8725) | Chống giả mạo JWT | `124` | `SPEC-06` | MUST |
+| Step-Up Auth (RFC 9470) | Nâng cấp xác thực theo ngữ cảnh | `138` | `SPEC-06` | SHOULD |
+| Token introspection/revocation | RFC 7662 / RFC 7009 / RFC 8707 | `126` | `SPEC-06` | MUST |
+| OpenID Connect Core | Liên kết danh tính, PPID | `126` | `SPEC-06` | SHOULD |
+| OIDC Logout (RP/Back/Front) | Đăng xuất đầy đủ, không phiên mồ côi | `126` | `SPEC-06` | SHOULD |
+| Device Authorization (RFC 8628) | TV, kiosk, POS | `126` | `SPEC-06` | MAY |
+| OpenID Federation 1.0 | Trust chain đa phương | `127` | `SPEC-06` | SHOULD |
+| GNAP | Cấp phép nhiều token | `128` | `SPEC-06` | MAY |
+| FAPI 2.0 + RISC/SET (RFC 8417) | Sự kiện bảo mật liên bên | `128` | `SPEC-06` | SHOULD |
+| OID4VCI 1.0 | Phát hành chứng chỉ số | `129` | `SPEC-06` | SHOULD |
+| OID4VP 1.0 | Trình bày chứng chỉ, QR liên thiết bị | `130` | `SPEC-06` | SHOULD |
+| SD-JWT / SD-JWT VC | Tiết lộ có chọn lọc | `129`, `130` | `SPEC-06` | SHOULD |
+| OAuth Token Status List | Thu hồi mật mã | `129` | `SPEC-06` | MUST |
+| Bitstring Status List 1.0 | Danh sách trạng thái nén | `131` | `SPEC-06` | MUST |
+| VC Data Integrity 1.0 | Ed25519 / ECDSA / BBS+ | `131` | `SPEC-06` | SHOULD |
+| DIF Presentation Exchange 2.1 | Mô tả yêu cầu dữ liệu | `131` | `SPEC-06` | SHOULD |
+| DID Core 1.0 / did:web / did:peer | Danh tính phi tập trung | `132`, `133` | `SPEC-06` | MAY |
+| DIDComm Messaging v2.0 | Truyền thông ví danh tính | `132` | `SPEC-06` | MAY |
+| ISO/IEC 18013-5 / 18013-7 | Giấy phép lái xe số (mDL) | `133`, `134` | `SPEC-06` | MAY |
+| CHAPI | Credential Handler API | `142` | `SPEC-06` | MAY |
+| SIOPv2 | Self-Issued OpenID Provider | `133` | `SPEC-06` | MAY |
+| Protected Resource Metadata (RFC 9728) | Metadata tài nguyên bảo vệ | `134` | `SPEC-06` | SHOULD |
+| Entity Attestation Token (RFC 9711) | Chứng thực phần cứng, RATS | `135` | `SPEC-05` | SHOULD |
+| C2PA v2.1 | Nguồn gốc nội dung số | `137` | `SPEC-05` | SHOULD |
+| IETF SCITT | Sổ cái minh bạch | `137` | `SPEC-05` | SHOULD |
+| RFC 3161 / RFC 6960 | Mốc thời gian, trạng thái chứng chỉ | `137` | `SPEC-05` | SHOULD |
+| FIDO MDS 3.0 | Metadata thiết bị xác thực | `140` | `SPEC-05` | SHOULD |
+| JWK Thumbprint (RFC 7638) | Định danh khóa máy đọc được | `135` | `SPEC-05` | MUST |
+| Deterministic CBOR (RFC 8949) / COSE | Đối tượng ký chuẩn hóa | `143` | `SPEC-05` | MUST |
+| Private Network Access (PNA) | Chống SSRF nội bộ | `142` | `SPEC-04` | MUST |
+| COEP credentialless | Cách ly tải chéo origin | `138` | `SPEC-04` | SHOULD |
+| Oblivious HTTP (RFC 9458) | Yêu cầu ẩn danh | `136` | `SPEC-04` | SHOULD |
+| IETF DAP / Prio3 VDAF | Đo lường đa bên | `136` | `SPEC-04` | SHOULD |
+| Oblivious PRF (RFC 9497) / PST | Chống lạm dụng riêng tư | `136` | `SPEC-04` | SHOULD |
+| I-Regexp (RFC 9485) | Chống ReDoS | `141` | `SPEC-04` | MUST |
+| Wasm JSPI | Tích hợp bất đồng bộ WebAssembly | `142` | `SPEC-04` | SHOULD |
+| Controlled Frame / IWA | Nhúng web cách ly, sandbox | `145` | `SPEC-03` | SHOULD |
+| CNCF SPIFFE | Danh tính workload | `145` | `SPEC-03` | SHOULD |
+| Houdini Worklets | CSS Layout / Animation Worklet | `139` | `SPEC-03` | SHOULD |
+| WebSocketStream | Kênh hai chiều có backpressure | `113` | `SPEC-03` | SHOULD |
+| WebNN | Suy luận AI trên thiết bị | `112` | `SPEC-03` | MAY |
+| Contact Picker API | Danh bạ theo phiên | `99` | `SPEC-03` | MAY |
+| Web MIDI | Thiết bị MIDI, lọc sys-ex | `100` | `SPEC-03` | MAY |
+| WebVTT | Phụ đề đồng bộ Media Session | `110` | `SPEC-03` | MAY |
+| HTML Microdata / JSON-LD 1.1 | Ngữ nghĩa trang máy đọc được | `93`, `138` | `SPEC-03` | SHOULD |
+| WAI-ARIA 1.2/1.3 | Phân loại role chuẩn | `144` | `SPEC-11` | MUST |
+| AccName 1.2 | Tên truy cập tính được | `144` | `SPEC-11` | MUST |
+| Core-AAM 1.2 / HTML-AAM 1.0 | Ánh xạ API trợ năng | `144` | `SPEC-11` | MUST |
+| ARIA APG | Mẫu bàn phím & widget | `144` | `SPEC-11` | MUST |
+| ARIA Live Regions | Thông báo động có kiểm soát | `144` | `SPEC-11` | SHOULD |
+| RFC 9557 (IXDTF) | Thời gian có múi giờ tường minh | `143` | `SPEC-11` | MUST |
+| TC39 Temporal / đa lịch | Lịch Gregory + lịch khác | `143` | `SPEC-11` | SHOULD |
+| UUIDv7 (RFC 9562) | Định danh đơn điệu theo thời gian | `141` | `SPEC-13` | MUST |
+| JSONPath (RFC 9535) | Truy vấn có cấu trúc an toàn | `140` | `SPEC-13` | SHOULD |
+| RFC 9209 / RFC 9211 | Header proxy/cache minh bạch | `141` | `SPEC-13` | SHOULD |
+| Web Linking (RFC 8288) / WebSub | Liên kết & kênh sự kiện | `109`, `141` | `SPEC-13` | MAY |
+| Solid Protocol / WAC / ACP | Pod dữ liệu, kiểm soát truy cập | `140` | `SPEC-07` | MAY |
+| VISS v2 | Telematics ô tô | `140` | `SPEC-03` | MAY |
+| JSContact (RFC 9553/9555) | Danh bạ chuẩn hóa | `135` | `SPEC-07` | MAY |
+
+---
+
+## 6. Ghi chú
 
 - 44 báo cáo nguồn (`report/48` … `report/91`) đều có ~15 findings với URL chuẩn
   và mức bằng chứng; bảng này chỉ là **chỉ mục**.

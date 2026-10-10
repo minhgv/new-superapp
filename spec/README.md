@@ -45,14 +45,14 @@ tại [APPENDIX-B](APPENDIX-B-conformance-checklist.md).
 | **SPEC-01** | [Package, Manifest & Addressing](SPEC-01-package-manifest-addressing.md) | Đóng gói `.zip`, `manifest.json`, URI deep-link, phiên bản, subpackage | C3 |
 | **SPEC-02** | [Runtime, Lifecycle & Host Bridge](SPEC-02-runtime-lifecycle-bridge.md) | Kiến trúc đa luồng, vòng đời app/trang, JSBridge, cross-context | C1 |
 | **SPEC-03** | [Developer API Surface](SPEC-03-developer-api-surface.md) | API tham chiếu cho lập trình viên: JSBridge + Web API | C3 |
-| **SPEC-04** | [Security & Sandboxing](SPEC-04-security-sandboxing.md) | XSS, CSP, sandbox, cô lập tiến trình, WASM, Trusted Types | C1 |
-| **SPEC-05** | [Supply Chain & Signing](SPEC-05-supply-chain-signing.md) | TUF, SLSA, Sigstore, SBOM/CBOM, attestation, anti-rollback | C1+C2 |
-| **SPEC-06** | [Capabilities & Permissions](SPEC-06-capabilities-permissions.md) | Permissions Policy, quyền thiết bị, cảm biến, delegation | C1 |
+| **SPEC-04** | [Security & Sandboxing](SPEC-04-security-sandboxing.md) | XSS, CSP, sandbox, cô lập tiến trình, WASM, Trusted Types; PNA, OHTTP/DAP, chống ReDoS | C1 |
+| **SPEC-05** | [Supply Chain & Signing](SPEC-05-supply-chain-signing.md) | TUF, SLSA, Sigstore, SBOM/CBOM, attestation, anti-rollback; EAT/RATS, C2PA, SCITT, COSE | C1+C2 |
+| **SPEC-06** | [Capabilities & Permissions](SPEC-06-capabilities-permissions.md) | Permissions Policy, quyền thiết bị, cảm biến, delegation; OAuth 2.1/OIDC, danh tính số (OID4VCI/VP, SD-JWT, DID), giấy tờ số | C1 |
 | **SPEC-07** | [Privacy & Data Governance](SPEC-07-privacy-data-governance.md) | Privacy, telemetry, storage, attribution, consent | C1+C2 |
 | **SPEC-08** | [Store Control Plane](SPEC-08-store-control-plane.md) | Publisher, submission, review, release lifecycle, catalog | C2 |
 | **SPEC-09** | [Commerce & Billing](SPEC-09-commerce-billing.md) | Thanh toán, digital goods, subscription, settlement, PCI DSS | C2 |
 | **SPEC-10** | [Reliability & Performance](SPEC-10-reliability-performance.md) | SLO, quota, resource governance, crash, ANR, power | C1 |
-| **SPEC-11** | [Compliance & Regionalization](SPEC-11-compliance-regionalization.md) | Age rating, child safety, localization, accessibility, luật khu vực | C2 |
+| **SPEC-11** | [Compliance & Regionalization](SPEC-11-compliance-regionalization.md) | Age rating, child safety, localization, accessibility (WCAG 2.2, WAI-ARIA/AccName/APG), luật khu vực, RFC 9557 | C2 |
 | **SPEC-12** | [Review Guidelines](SPEC-12-review-guidelines.md) | Quy tắc review cửa hàng, checklist nhà phát triển | C2+C3 |
 | **SPEC-13** | [Control-Plane API](SPEC-13-control-plane-api.md) | Hồ sơ REST API của control plane (OpenAPI) | C2 |
 | **A** | [Capability Catalog](APPENDIX-A-capability-catalog.md) | Danh mục năng lực Web Platform theo nhóm | Tham khảo |
@@ -81,6 +81,7 @@ Yêu cầu **không có nguồn** là đề xuất kiến trúc (proposal) của
 | Phiên bản | Ngày | Thay đổi |
 |---|---|---|
 | 1.0.0 | 2026-10 | Tổng hợp lần đầu từ các báo cáo nghiên cứu (tới iteration 95) |
+| 1.1.0 | 2026-10 | Bổ sung 50 báo cáo mới (report/92…report/145): OAuth/OIDC, danh tính số, chứng thực phần cứng, C2PA/SCITT, PNA, WAI-ARIA, IXDTF. Thêm cổng G5. |
 
 Trạng thái hiện tại: **Draft**. Bộ tài liệu sẽ được nâng phiên bản khi có thêm bằng chứng
 hoặc quyết định kiến trúc mới. Các phát hiện lịch sử không bị ghi đè; chỉ bổ sung.

@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-11` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C2** (Store / Compliance) |
 | Nguồn | `report/12`, `report/13`, `report/22`, `report/08`, `report/34`, `report/53`, `report/80` |
@@ -136,6 +136,31 @@ người dùng dễ bị tổn thương, và tiếp cận được với mọi n
 > *Nguồn:* `→ report/08-...md` · *Kiểm chứng:* review
 
 ---
+
+### 3.5 Trợ năng nâng cao (WAI-ARIA) & bản địa hóa thời gian
+
+*Bổ sung từ `report/143`, `report/144`.*
+
+> **REQ-11-029** (MUST · C2) — Thành phần tương tác **PHẢI** dùng đúng **WAI-ARIA 1.2/1.3** role taxonomy (abstract / widget / document structure / landmark); **KHÔNG** gán role tùy tiện để "chữa cháy" giao diện.
+> *Nguồn:* `→ report/144-...md` · *Kiểm chứng:* static
+
+> **REQ-11-030** (MUST · C2) — Mọi điều khiển **PHẢI** có accessible name tính được theo **W3C AccName 1.2** (thứ tự ưu tiên thuật toán); tên công khai **PHẢI** khớp với accessible name.
+> *Nguồn:* `→ report/144-...md` · *Kiểm chứng:* static
+
+> **REQ-11-031** (MUST · C2) — Ánh xạ sang API trợ năng nền tảng **PHẢI** đúng **Core-AAM 1.2** và **HTML-AAM 1.0** — kiểm chứng được bằng trình đọc màn hình thật, không chỉ bằng công cụ tĩnh.
+> *Nguồn:* `→ report/144-...md` · *Kiểm chứng:* review
+
+> **REQ-11-032** (MUST · C2) — Mẫu tương tác **PHẢI** theo **ARIA Authoring Practices Guide (APG)** về bàn phím: thứ tự tab, phím tắt, quản lý focus, và mô hình widget chuẩn.
+> *Nguồn:* `→ report/144-...md` · *Kiểm chứng:* review
+
+> **REQ-11-033** (SHOULD · C2) — Vùng thông báo động **NÊN** dùng **ARIA live regions** có kiểm soát tốc độ phát thông báo (tránh "announcement storm" khi cập nhật liên tục).
+> *Nguồn:* `→ report/144-...md` · *Kiểm chứng:* runtime
+
+> **REQ-11-034** (MUST · C3) — Biểu diễn thời gian **PHẢI** dùng **RFC 9557** (IXDTF) với hậu tố múi giờ tường minh và cờ `critical` khi thay đổi có nghĩa; **KHÔNG** dùng chuỗi thời gian mơ hồ.
+> *Nguồn:* `→ report/143-...md` · *Kiểm chứng:* static
+
+> **REQ-11-035** (SHOULD · C3) — Ứng dụng có nghiệp vụ theo lịch **NÊN** hỗ trợ **TC39 Temporal** và đa lịch (âm lịch, Hồi giáo, Phật lịch) thay vì hard-code lịch Gregory.
+> *Nguồn:* `→ report/143-...md` · *Kiểm chứng:* review
 
 ## 4. Ghi chú triển khai (informative)
 

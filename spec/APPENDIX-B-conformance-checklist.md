@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | ID | `APPENDIX-B` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Mục đích | Cổng kiểm tra tuân thủ kiểm chứng được cho mỗi bản phát hành |
 | Nguồn | `report/03-security-privacy-control-matrix.md`, `report/06-gaps-validation-plan.md`, `SPEC-00` §4–5 |
@@ -36,7 +36,10 @@ chuyển sang `active`. Mỗi mục kiểm tra có:
 
 ---
 
-## 2. Bốn cổng bắt buộc
+## 2. Các cổng bắt buộc
+
+> **Lưu ý:** G1–G4 là bốn cổng **luôn luôn** bắt buộc. G5 (§2 cuối) chỉ áp dụng
+> khi mini app có danh tính số / chứng chỉ / chứng thực phần cứng.
 
 ### Cổng 1 — Kiểm tra tĩnh (Static gate)
 
@@ -115,6 +118,31 @@ chuyển sang `active`. Mỗi mục kiểm tra có:
 | G4-06 | Nhật ký & giám sát | Có cảnh báo và nhật ký tương quan | runtime | `SPEC-10` |
 | G4-07 | Cập nhật delta toàn vẹn | Digest cuối khớp sau delta update | runtime | `SPEC-05` |
 | G4-08 | Thông báo sự cố | Quy trình thông báo theo mức nghiêm trọng | review | `SPEC-08` |
+
+---
+
+### Cổng 5 — Danh tính & Chuỗi minh bạch (Identity & provenance gate)
+
+*Bổ sung từ các báo cáo `report/124` … `report/145`. Bắt buộc khi mini app
+sử dụng danh tính số, chứng chỉ, hoặc chứng thực phần cứng.*
+
+| ID | Kiểm tra | Pass khi | Phương pháp | SPEC |
+|---|---|---|---|---|
+| G5-01 | OAuth 2.1 + PKCE S256 | Không implicit/password grant | static | `SPEC-06` |
+| G5-02 | JWT tuân thủ RFC 8725 | Không `alg=none`, đủ `iss`/`aud`/`exp` | static | `SPEC-06` |
+| G5-03 | Khóa có JWK Thumbprint | Mọi khóa có định danh máy đọc được | static | `SPEC-05` |
+| G5-04 | Đối tượng ký chuẩn hóa | CBOR deterministic hoặc JSON canonical | static | `SPEC-05` |
+| G5-05 | Thu hồi chứng chỉ hoạt động | Status List trả về trạng thái trong ≤ 60 s | runtime | `SPEC-06` |
+| G5-06 | Tiết lộ có chọn lọc | SD-JWT không lộ thuộc tính thừa | review | `SPEC-06` |
+| G5-07 | Chuỗi tin cậy hợp lệ | Trust chain về tới trust anchor | runtime | `SPEC-06` |
+| G5-08 | EAT/RATS hợp lệ | Attestation result có appraisal | runtime | `SPEC-05` |
+| G5-09 | Nguồn gốc nội dung (nếu có) | C2PA manifest ký hợp lệ | static | `SPEC-05` |
+| G5-10 | PNA chặn SSRF nội bộ | Không gọi được RFC 1918/loopback | runtime | `SPEC-04` |
+| G5-11 | Trợ năng: AccName + APG | Mọi điều khiển có tên + bàn phím đúng | static + review | `SPEC-11` |
+| G5-12 | Thời gian tường minh | Không có chuỗi giờ mơ hồ (RFC 9557) | static | `SPEC-11` |
+
+> Cổng 5 chỉ **bổ sung**, không thay thế bốn cổng G1–G4. Một mini app không
+> dùng danh tính số vẫn phải qua G1–G4; khi có danh tính số thì thêm G5.
 
 ---
 

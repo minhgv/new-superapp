@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-13` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C2** (Store / Control plane) |
 | Nguồn | `report/02`, `report/11`, `report/41`, `report/59`, `report/42`, `report/53` |
@@ -138,6 +138,22 @@ tự động hóa toàn bộ vòng đời phát hành.
 > *Nguồn:* `→ report/02-...md`, `→ report/09-...md` · *Kiểm chứng:* review
 
 ---
+
+### 3.7 Định danh, truy vấn & minh bạch cache
+
+*Bổ sung từ `report/140`, `report/141`, `report/143`.*
+
+> **REQ-13-026** (MUST · C2) — Định danh tài nguyên **PHẢI** dùng **UUIDv7** (RFC 9562) để đơn điệu theo thời gian, tránh bội chi và truy vấn theo thứ tự được; **KHÔNG** dùng UUIDv4 cho đối tượng có thứ tự nghiệp vụ.
+> *Nguồn:* `→ report/141-...md` · *Kiểm chứng:* static
+
+> **REQ-13-027** (SHOULD · C2) — Truy vấn có cấu trúc **NÊN** dùng **RFC 9535** (JSONPath) cho bộ lọc máy đọc được; biểu thức **PHẢI** thuộc tập an toàn (không ReDoS).
+> *Nguồn:* `→ report/140-...md` · *Kiểm chứng:* static
+
+> **REQ-13-028** (SHOULD · C2) — Phản hồi **NÊN** tách bạch cache theo **RFC 9209** (`CDN-Cache-Control`, `Surrogate-Control`) và **RFC 9211** (`Cache-Status`) để chẩn đoán được cache đang dùng hay bỏ qua.
+> *Nguồn:* `→ report/141-...md` · *Kiểm chứng:* runtime
+
+> **REQ-13-029** (MAY · C2) — Liên kết giữa tài nguyên **CÓ THỂ** dùng **RFC 8288** (Web Linking) và kênh sự kiện **CÓ THỂ** dùng WebSub; **PHẢI** xác minh chủ đề qua chữ ký.
+> *Nguồn:* `→ report/141-...md`, `→ report/109-...md` · *Kiểm chứng:* static
 
 ## 4. Ghi chú triển khai (informative)
 

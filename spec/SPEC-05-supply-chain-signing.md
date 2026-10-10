@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-05` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C1 + C2** |
 | Nguồn | `report/18`, `report/37`, `report/41`, `report/39`, `report/54`, `report/45`, `report/47`, `report/20` |
@@ -148,6 +148,37 @@ Mục tiêu: một gói **không** được chấp nhận nếu không chứng m
 > *Nguồn:* `→ report/18-...md` · *Kiểm chứng:* review
 
 ---
+
+### 3.6 Chứng thực nguồn gốc & minh bạch chuỗi cung ứng
+
+*Được bổ sung từ `report/135`, `report/137`, `report/140`, `report/143`.*
+
+> **REQ-05-032** (SHOULD · C1) — Chứng thực thiết bị **NÊN** dùng **RFC 9711** (Entity Attestation Token, EAT) theo chu trình **RATS**: evidence → appraisal → attestation result.
+> *Nguồn:* `→ report/135-...md` · *Kiểm chứng:* runtime
+
+> **REQ-05-033** (SHOULD · C1) — EAT **NÊN** mang khẳng định định danh phần cứng, trạng thái khởi động (verified/unlocked) và phép đo phần mềm; media type theo **RFC 9782**.
+> *Nguồn:* `→ report/135-...md` · *Kiểm chứng:* static
+
+> **REQ-05-034** (SHOULD · C3) — Nội dung số do mini app tạo ra **NÊN** gắn **C2PA Technical Specification v2.1** (manifest nguồn gốc, chữ ký COSE, watermark).
+> *Nguồn:* `→ report/137-...md` · *Kiểm chứng:* static
+
+> **REQ-05-035** (SHOULD · C2) — Khai báo nguồn gốc quan trọng **NÊN** được ghi vào **IETF SCITT** (transparency ledger) để truy xuất và chống chối bỏ.
+> *Nguồn:* `→ report/137-...md` · *Kiểm chứng:* runtime
+
+> **REQ-05-036** (SHOULD · C2) — Bằng chứng minh bạch **NÊN** dùng Merkle tree proof với mốc thời gian **RFC 3161**; trạng thái chứng chỉ kiểm tra qua **RFC 6960** (OCSP) hoặc CRL.
+> *Nguồn:* `→ report/137-...md` · *Kiểm chứng:* runtime
+
+> **REQ-05-037** (SHOULD · C1) — Khóa phần cứng xác thực **NÊN** tra cứu **FIDO Alliance Metadata Service 3.0** (MDS 3.0) để biết trạng thái chứng nhận của thiết bị.
+> *Nguồn:* `→ report/140-...md` · *Kiểm chứng:* runtime
+
+> **REQ-05-038** (MUST · C1) — Khóa trong mọi khai báo **PHẢI** có định danh máy đọc được bằng **JWK Thumbprint** (RFC 7638); **KHÔNG** định danh khóa bằng tên tệp hay chuỗi tùy ý.
+> *Nguồn:* `→ report/135-...md` · *Kiểm chứng:* static
+
+> **REQ-05-039** (MUST · C1) — Đối tượng được ký (attestation, manifest, quyết định) **PHẢI** được mã hóa **CBOR xác định (deterministic, RFC 8949)** hoặc JSON canonical (RFC 8785) trước khi ký — bảo đảm cùng nội dung cho cùng digest.
+> *Nguồn:* `→ report/143-...md`, `→ report/131-...md` · *Kiểm chứng:* static
+
+> **REQ-05-040** (SHOULD · C1) — Chữ ký đối tượng nhị phân **NÊN** dùng **COSE** (RFC 9052/9053); **KHÔNG** trộn lẫn định dạng chữ ký khác nhau cho cùng loại đối tượng.
+> *Nguồn:* `→ report/137-...md`, `→ report/143-...md` · *Kiểm chứng:* static
 
 ## 4. Ghi chú triển khai (informative)
 

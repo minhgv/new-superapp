@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-04` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C1** (Host / Container) |
 | Nguồn | `report/23`, `report/19`, `report/39`, `report/42`, `report/43`, `report/54`, `report/20`, `report/52`, `report/54`, `report/61` |
@@ -159,6 +159,34 @@ host hoặc mini-app khác.
 > *Nguồn:* `→ report/39-...md` · *Kiểm chứng:* static
 
 ---
+
+### 3.6 Cách ly mạng, bảo toàn riêng tư & chống khai thác
+
+*Bổ sung từ `report/136`, `report/138`, `report/141`, `report/142`, `report/145`.*
+
+> **REQ-04-035** (MUST · C1) — Truy cập mạng cục bộ từ mini app **PHẢI** đi qua **Private Network Access (PNA)** preflight (`Access-Control-Request-Private-Network`); **KHÔNG** cho phép gọi thẳng vào mạng nội bộ.
+> *Nguồn:* `→ report/142-...md` · *Kiểm chứng:* static
+
+> **REQ-04-036** (MUST · C1) — Không gian địa chỉ IP **PHẢI** được phân loại theo **RFC 1918** (public / private / loopback / link-local); bộ chặn **PHẢI** chống SSRF nội bộ và dò loopback.
+> *Nguồn:* `→ report/142-...md` · *Kiểm chứng:* runtime
+
+> **REQ-04-037** (SHOULD · C1) — Cách ly tải chéo origin **NÊN** dùng **COEP `credentialless`** và `iframe credentialless` để tải tài nguyên chéo origin **KHÔNG** kèm thông tin xác thực.
+> *Nguồn:* `→ report/138-...md` · *Kiểm chứng:* static
+
+> **REQ-04-038** (SHOULD · C1) — Yêu cầu cần ẩn danh **NÊN** dùng **RFC 9458** (Oblivious HTTP) với gateway-Relay không thông đồng, khung Binary HTTP và HPKE.
+> *Nguồn:* `→ report/136-...md` · *Kiểm chứng:* runtime
+
+> **REQ-04-039** (SHOULD · C2) — Đo lường thống kê đa bên **NÊN** dùng **IETF DAP** (Distributed Aggregation Protocol) với VDAF `Prio3` để tổng hợp mà **KHÔNG** bên nào thấy dữ liệu thô.
+> *Nguồn:* `→ report/136-...md` · *Kiểm chứng:* runtime
+
+> **REQ-04-040** (SHOULD · C1) — Chống lạm dụng giữ riêng tư **NÊN** dùng **RFC 9497** (Oblivious PRF) và **Private State Tokens** (phát hành/chuộc, chống theo dõi).
+> *Nguồn:* `→ report/136-...md` · *Kiểm chứng:* runtime
+
+> **REQ-04-041** (MUST · C1) — Biểu thức chính quy do người dùng hoặc nhà phát triển cung cấp **PHẢI** thuộc tập **I-Regexp** (RFC 9485) hoặc được kiểm soát theo thời gian chạy — **KHÔNG** chấp nhận vector ReDoS.
+> *Nguồn:* `→ report/141-...md` · *Kiểm chứng:* static
+
+> **REQ-04-042** (SHOULD · C1) — Mô-đun WebAssembly **NÊN** chạy trong sandbox cách ly, tách khỏi luồng chính; tích hợp bất đồng bộ qua **Wasm JSPI** thay vì chặn luồng chính.
+> *Nguồn:* `→ report/142-...md`, `→ report/145-...md` · *Kiểm chứng:* runtime
 
 ## 4. Ghi chú triển khai (informative)
 

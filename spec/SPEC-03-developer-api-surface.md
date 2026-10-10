@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-03` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C3** (Mini App) — hợp đồng do **C1** thực thi |
 | Nguồn | `report/16`, `report/29`, `report/24`, `report/46`, `report/30`, `report/25`, `report/34`, `report/35`, `report/43`, `report/56`, `report/47`, `report/63`, `report/67` |
@@ -248,6 +248,43 @@ từ host, và hợp đồng lỗi.
 > *Nguồn:* `→ report/33-...md` · *Kiểm chứng:* runtime
 
 ---
+
+### 3.11 API bổ sung từ nhóm báo cáo mở rộng
+
+*Bổ sung từ `report/93`, `report/99`, `report/100`, `report/110`, `report/112`, `report/113`, `report/135`, `report/138`, `report/139`, `report/145`.*
+
+> **REQ-03-034** (SHOULD · C1) — Nhúng nội dung web bên thứ ba **NÊN** dùng **WICG Controlled Frame API** trong ngữ cảnh **Isolated Web Apps (IWA)** — cho phép điều hướng, chặn mở cửa sổ mới và ủy quyền quyền hạn chi tiết.
+> *Nguồn:* `→ report/145-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-035** (SHOULD · C1) — Tiêm script vào Controlled Frame **NÊN** dùng `executeScript` / `addContentScripts` có sandbox; **KHÔNG** chèn script qua DOM chung.
+> *Nguồn:* `→ report/145-...md` · *Kiểm chứng:* static
+
+> **REQ-03-036** (SHOULD · C1) — Lưu trữ trong Controlled Frame **NÊN** dùng thuộc tính `partition` để cô lập theo phiên; phiên nhạy cảm dùng phiên không bền (ephemeral).
+> *Nguồn:* `→ report/145-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-037** (SHOULD · C1) — Danh tính workload **NÊN** dùng **CNCF SPIFFE** (SPIFFE ID URI scheme, trust domain theo tenant) thay cho chứng chỉ tự ký theo lô.
+> *Nguồn:* `→ report/145-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-038** (SHOULD · C1) — Bố cục / hoạt ảnh tùy biến hiệu năng cao **NÊN** dùng **Houdini Worklets** (CSS Layout Worklet, CSS Animation Worklet) chạy trên worklet thread.
+> *Nguồn:* `→ report/139-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-039** (SHOULD · C1) — Kênh hai chiều cần kiểm soát backpressure **NÊN** dùng **WebSocketStream** (tích hợp Streams API) thay cho WebSocket nguyên thủy khi tải thay đổi mạnh.
+> *Nguồn:* `→ report/113-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-040** (MAY · C1) — Suy luận AI trên thiết bị **CÓ THỂ** dùng **Web Neural Network API (WebNN)** với tăng tốc phần cứng; **PHẢI** có đường suy luận CPU dự phòng.
+> *Nguồn:* `→ report/112-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-041** (MAY · C1) — Truy cập danh bạ **CÓ THỂ** dùng **Contact Picker API**; **PHẢI** là truy cập theo phiên do người dùng khởi xướng, **KHÔNG** đọc nền.
+> *Nguồn:* `→ report/99-...md`, `→ report/135-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-042** (MAY · C1) — Thiết bị MIDI **CÓ THỂ** dùng **Web MIDI API** với lọc sys-ex; mặc định **TẮT** cho mini app không khai báo.
+> *Nguồn:* `→ report/100-...md` · *Kiểm chứng:* static
+
+> **REQ-03-043** (MAY · C1) — Phụ đề video **CÓ THỂ** dùng **WebVTT**; trình phát **PHẢI** đồng bộ track với Media Session.
+> *Nguồn:* `→ report/110-...md` · *Kiểm chứng:* runtime
+
+> **REQ-03-044** (SHOULD · C1) — Hiểu biết ngữ nghĩa trang **NÊN** dùng **HTML Microdata** hoặc **JSON-LD 1.1** để công cụ tìm kiếm và trợ năng đọc được cấu trúc dữ liệu.
+> *Nguồn:* `→ report/93-...md`, `→ report/138-...md` · *Kiểm chứng:* static
 
 ## 4. Bảng mức hỗ trợ bắt buộc từ Host
 

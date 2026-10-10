@@ -1,7 +1,7 @@
 # Mini App Store Standard for a Super App
 
 > **Bộ đặc tả (specification):** [`spec/README.md`](spec/README.md) — 17 tài liệu chuẩn hóa
-> (SPEC-00…SPEC-13 + 2 phụ lục), 427 yêu cầu RFC-2119 và 50 cổng tuân thủ,
+> (SPEC-00…SPEC-13 + 2 phụ lục), 492 yêu cầu RFC-2119 và 62 cổng tuân thủ (G1–G5),
 > được tổng hợp từ các báo cáo nghiên cứu trong repo này. Đây là tài liệu để triển khai;
 > phần dưới đây là nhật ký nghiên cứu gốc.
 

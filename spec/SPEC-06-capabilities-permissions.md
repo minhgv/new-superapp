@@ -3,7 +3,7 @@
 | Trường | Giá trị |
 |---|---|
 | Spec ID | `SPEC-06` |
-| Phiên bản | 1.0.0 |
+| Phiên bản | 1.1.0 |
 | Trạng thái | Draft |
 | Lớp tuân thủ | **C1** (Host / Container) |
 | Nguồn | `report/18`, `report/25`, `report/35`, `report/34`, `report/43`, `report/46`, `report/56`, `report/63`, `report/67`, `report/20` |
@@ -175,6 +175,91 @@ foreground**, và có nhật ký kiểm toán đầy đủ.
 > *Nguồn:* `→ report/53-...md` · *Kiểm chứng:* runtime
 
 ---
+
+### 3.6 OAuth 2.1 & xác thực cho luồng danh tính
+
+*Các yêu cầu này bổ sung cho §3.5, dựa trên nhóm báo cáo OAuth/OpenID
+(`report/124` … `report/135`, `report/138`).*
+
+> **REQ-06-040** (MUST · C1) — Luồng xác thực **PHẢI** dùng **OAuth 2.1** làm đường cơ sở: PKCE (RFC 7636, `S256`) bắt buộc, **KHÔNG** dùng implicit grant hoặc resource-owner password grant.
+> *Nguồn:* `→ report/125-...md`, `→ report/127-...md` · *Kiểm chứng:* static
+
+> **REQ-06-041** (SHOULD · C1) — Token truy cập **NÊN** được gắn người gửi bằng **DPoP** (RFC 9449); token bị đánh cắp sẽ vô hiệu khi thiếu khóa chứng minh.
+> *Nguồn:* `→ report/125-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-042** (SHOULD · C1) — Luồng có giá trị cao **NÊN** dùng **PAR** (RFC 9126) để đẩy tham số ủy quyền lên server trước khi cấp token.
+> *Nguồn:* `→ report/127-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-043** (SHOULD · C1) — Yêu cầu ủy quyền **NÊN** dùng **JAR** (RFC 9101) để ký và bảo toàn tính toàn vẹn tham số.
+> *Nguồn:* `→ report/124-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-044** (MUST · C1) — JWT **PHẢI** tuân thủ **RFC 8725** (JWT Best Current Practices): cấm `alg=none`, cấm thuật toán đối xứng cho chữ ký ngoài luồng, bắt buộc `iss`/`aud`/`exp`.
+> *Nguồn:* `→ report/124-...md` · *Kiểm chứng:* static
+
+> **REQ-06-045** (SHOULD · C1) — Nâng cấp xác thực theo ngữ cảnh **NÊN** dùng **RFC 9470** (Step-Up Authentication Challenge) với thách thức động gắn vào `WWW-Authenticate`.
+> *Nguồn:* `→ report/138-...md`, `→ report/134-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-046** (MUST · C1) — Vòng đời token **PHẢI** có introspection (RFC 7662), thu hồi (RFC 7009) và resource indicators (RFC 8707); token thu hồi **PHẢI** mất hiệu lực trong vòng 60 giây.
+> *Nguồn:* `→ report/126-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-047** (SHOULD · C1) — Liên kết danh tính **NÊN** dùng **OpenID Connect Core 1.0** với Pairwise Pseudonymous Identifier (PPID) để không liên kết chéo được người dùng giữa các nhà phát triển.
+> *Nguồn:* `→ report/126-...md` · *Kiểm chứng:* review
+
+> **REQ-06-048** (SHOULD · C1) — Đăng xuất **NÊN** hỗ trợ đầy đủ RP-Initiated Logout, Back-Channel Logout và Front-Channel Logout để không còn phiên mồ côi.
+> *Nguồn:* `→ report/126-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-049** (MAY · C1) — Thiết bị không có trình duyệt (TV, kiosk, POS) **CÓ THỂ** dùng **RFC 8628** (Device Authorization Grant) kèm kiểm soát tốc độ cho mã thiết bị.
+> *Nguồn:* `→ report/126-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-050** (SHOULD · C2) — Tin cậy giữa các bên **NÊN** dùng **OpenID Federation 1.0** (entity statements, trust chains, metadata policy) thay cho cấu hình thủ công từng đối tác.
+> *Nguồn:* `→ report/127-...md` · *Kiểm chứng:* review
+
+> **REQ-06-051** (MAY · C1) — Luồng ủy quyền tinh gọn **CÓ THỂ** dùng **GNAP** (Grant Negotiation and Authorization Protocol) cho cấp phép nhiều token và tương tác ngoài trình duyệt.
+> *Nguồn:* `→ report/128-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-052** (SHOULD · C2) — Sự kiện bảo mật liên bên **NÊN** dùng **FAPI 2.0 Message Signing** và **RISC/SET** (RFC 8417) để thông báo thay đổi trạng thái danh tính theo thời gian thực.
+> *Nguồn:* `→ report/128-...md` · *Kiểm chứng:* runtime
+
+### 3.7 Danh tính số & giấy tờ xác thực
+
+> **REQ-06-053** (SHOULD · C1) — Phát hành chứng chỉ số **NÊN** dùng **OID4VCI 1.0** (OpenID for Verifiable Credential Issuance) với metadata chuẩn.
+> *Nguồn:* `→ report/129-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-054** (SHOULD · C1) — Trình bày chứng chỉ **NÊN** dùng **OID4VP 1.0** với `direct_post`/`direct_post.jwt` và hỗ trợ trình bày liên thiết bị qua QR động.
+> *Nguồn:* `→ report/130-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-055** (SHOULD · C1) — Tiết lộ dữ liệu **NÊN** dùng **SD-JWT / SD-JWT VC** (tiết lộ có chọn lọc) để **KHÔNG** phải lộ toàn bộ thuộc tính khi chỉ cần một trường.
+> *Nguồn:* `→ report/129-...md`, `→ report/130-...md` · *Kiểm chứng:* static
+
+> **REQ-06-056** (MUST · C1) — Thu hồi chứng chỉ **PHẢI** dùng **OAuth Token Status List** hoặc **W3C Bitstring Status List v1.0**; **KHÔNG** chấp nhận chứng chỉ không kiểm tra được trạng thái.
+> *Nguồn:* `→ report/129-...md`, `→ report/131-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-057** (SHOULD · C1) — Toàn vẹn chứng chỉ **NÊN** dùng **W3C VC Data Integrity 1.0** với cryptosuite Ed25519 hoặc ECDSA; BBS+ cho bằng chứng không tri thức.
+> *Nguồn:* `→ report/131-...md` · *Kiểm chứng:* static
+
+> **REQ-06-058** (SHOULD · C1) — Trao đổi trình bày **NÊN** dùng **DIF Presentation Exchange 2.1** để mô tả yêu cầu dữ liệu một cách máy đọc được.
+> *Nguồn:* `→ report/131-...md` · *Kiểm chứng:* static
+
+> **REQ-06-059** (MAY · C1) — Danh tính phi tập trung **CÓ THỂ** dùng **W3C DID Core 1.0** với `did:web` hoặc `did:peer`; mọi DID **PHẢI** giải quyết được về khóa xác minh.
+> *Nguồn:* `→ report/132-...md`, `→ report/133-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-060** (MAY · C1) — Truyền thông giữa các ví danh tính **CÓ THỂ** dùng **DIF DIDComm Messaging v2.0**.
+> *Nguồn:* `→ report/132-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-061** (MAY · C1) — Giấy tờ định danh di động **CÓ THỂ** tuân thủ **ISO/IEC 18013-5** (mDL) và **18013-7** (mDL từ xa) qua Digital Credentials API.
+> *Nguồn:* `→ report/133-...md`, `→ report/134-...md` · *Kiểm chứng:* review
+
+> **REQ-06-062** (MAY · C1) — Ví danh tính bên thứ ba **CÓ THỂ** tích hợp qua **CHAPI** (Credential Handler API) với ủy quyền rõ ràng từng lần.
+> *Nguồn:* `→ report/142-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-063** (MAY · C1) — Đăng nhập không trung gian **CÓ THỂ** dùng **SIOPv2** (Self-Issued OpenID Provider v2).
+> *Nguồn:* `→ report/133-...md` · *Kiểm chứng:* runtime
+
+> **REQ-06-064** (SHOULD · C2) — Tài nguyên được bảo vệ **NÊN** công bố **RFC 9728** (Protected Resource Metadata); client nhạy cảm **NÊN** dùng attestation-based client authentication.
+> *Nguồn:* `→ report/134-...md` · *Kiểm chứng:* static
+
+> **REQ-06-065** (SHOULD · C1) — Danh tính thiết bị **NÊN** dùng **RFC 9711** (Entity Attestation Token, EAT) để chứng thực trạng thái khởi động và phép đo phần mềm.
+> *Nguồn:* `→ report/135-...md` · *Kiểm chứng:* runtime
 
 ## 4. Ghi chú triển khai (informative)
 
