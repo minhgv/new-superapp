@@ -1,7 +1,7 @@
 {
   "generated_at": "2026-10-09T23:30:34.579884+00:00",
-  "iteration": 125,
-  "total_findings": 1826,
+  "iteration": 130,
+  "total_findings": 1901,
   "unique_urls": 1515,
   "categories_breakdown": {
     "Uncategorized": 641,
@@ -259,7 +259,7 @@
     "technical_standard": 3,
     "industry_benchmark": 5
   },
-  "status": "passed_all_quality_gates",
+  "status": "passing",
   "credentials_scanned": true,
   "credentials_detected": 0
 }
