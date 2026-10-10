@@ -28,9 +28,9 @@ Tài liệu dùng từ khóa RFC 2119 / RFC 8174:
 
 | Lớp | Đối tượng | Bắt buộc tuân thủ |
 |---|---|---|
-| **C1 — Host / Container** | Super app, native container, runtime mini-app | SPEC-02, 04, 05, 06, 10 |
+| **C1 — Host / Container** | Super app, native container, runtime mini-app | SPEC-02, 04, 05, 06, 10, 14 |
 | **C2 — Store / Control plane** | Hệ thống phát hành, review, catalog | SPEC-08, 13, 05, 11 |
-| **C3 — Mini App / Developer** | Nhà phát triển mini-app | SPEC-01, 03, 12 |
+| **C3 — Mini App / Developer** | Nhà phát triển mini-app | SPEC-01, 03, 12, 14 |
 
 Một phiên bản mini-app chỉ được **publish** khi cả C1, C2, C3 đều đạt các cổng (gate)
 tại [APPENDIX-B](APPENDIX-B-conformance-checklist.md).
@@ -55,8 +55,10 @@ tại [APPENDIX-B](APPENDIX-B-conformance-checklist.md).
 | **SPEC-11** | [Compliance & Regionalization](SPEC-11-compliance-regionalization.md) | Age rating, child safety, localization, accessibility (WCAG 2.2, WAI-ARIA/AccName/APG), luật khu vực, RFC 9557 | C2 |
 | **SPEC-12** | [Review Guidelines](SPEC-12-review-guidelines.md) | Quy tắc review cửa hàng, checklist nhà phát triển | C2+C3 |
 | **SPEC-13** | [Control-Plane API](SPEC-13-control-plane-api.md) | Hồ sơ REST API của control plane (OpenAPI) | C2 |
+| **SPEC-14** | [WindVane / JSAPI Conformance](SPEC-14-windvane-jsapi-conformance.md) | Tầng gắn kết POC Alibaba Cloud SuperApp/WindVane: SDK Android/iOS, 22 JSBridge class, đóng gói, phát hành | C1+C2+C3 |
 | **A** | [Capability Catalog](APPENDIX-A-capability-catalog.md) | Danh mục năng lực Web Platform theo nhóm | Tham khảo |
 | **B** | [Conformance Checklist](APPENDIX-B-conformance-checklist.md) | Cổng kiểm tra tuân thủ có thể kiểm chứng tự động | Tất cả |
+| **C** | [POC Mapping](APPENDIX-C-poc-mapping.md) | Đối chiếu thành phần POC Alibaba/WindVane ↔ SPEC, nhóm KEEP/ADD/VALIDATE | Tham khảo |
 
 ---
 
@@ -82,6 +84,7 @@ Yêu cầu **không có nguồn** là đề xuất kiến trúc (proposal) của
 |---|---|---|
 | 1.0.0 | 2026-10 | Tổng hợp lần đầu từ các báo cáo nghiên cứu (tới iteration 95) |
 | 1.1.0 | 2026-10 | Bổ sung 50 báo cáo mới (report/92…report/145): OAuth/OIDC, danh tính số, chứng thực phần cứng, C2PA/SCITT, PNA, WAI-ARIA, IXDTF. Thêm cổng G5. |
+| 1.2.0 | 2026-10 | Thêm SPEC-14 (WindVane/JSAPI conformance) + APPENDIX-C (đối chiếu POC Alibaba/WindVane), xây từ tài liệu chính thức Alibaba Cloud. Lấp khoảng trống đã ghi nhận ở report/06. |
 
 Trạng thái hiện tại: **Draft**. Bộ tài liệu sẽ được nâng phiên bản khi có thêm bằng chứng
 hoặc quyết định kiến trúc mới. Các phát hiện lịch sử không bị ghi đè; chỉ bổ sung.
