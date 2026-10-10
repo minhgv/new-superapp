@@ -1,7 +1,7 @@
 # Mini App Store Standard for a Super App
 
-**Research status:** Deli Deep iteration 134
-**Evidence records:** 1,961
+**Research status:** Deli Deep iteration 145
+**Evidence records:** 2,126
 **Iteration 129 additions:** 15 findings across OpenID for Verifiable Credential Issuance (OID4VCI 1.0 architecture, discovery metadata, Pre-Authorized Code flow with tx_code, hardware PoP with c_nonce, deferred/batch issuance, /notification lifecycle); IETF OAuth Token Status List (draft-ietf-oauth-status-list, bitstring lst claims, status_list references, Deflate compression & verifier privacy preservation, multi-tenant sharding, store verification pipeline); and IETF SD-JWT Selective Disclosure (draft-ietf-oauth-selective-disclosure-jwt, _sd salt digests, Key Binding KB-JWT, recursive nested & array element disclosure, verifier anti-tampering rules, super-app consent sheet UI) / 6 authoritative specifications rechecked HTTP 200
 **Iteration 128 additions:** 15 findings across IETF GNAP Next-Gen Grant Negotiation, OpenID FAPI 2.0 Message Signing (RFC 9421) & OpenID RISC / IETF SET Distributed Security Events (RFC 8417, RFC 8935, RFC 8936)
 **Iteration 127 additions:** 15 findings across IETF RFC 9126 Pushed Authorization Requests (PAR), OAuth 2.1 Consolidated Framework & OpenID Federation 1.0 Multilateral Trust
@@ -177,3 +177,8 @@ The append-only research state is in `../code/deli/super-app-mini-app-store-stan
 | 138 | IETF RFC 9470 OAuth 2.0 Step-Up Authentication Challenge Protocol, Cross-Origin Embedder Policy (COEP) Credentialless & W3C JSON-LD 1.1 Linked Data Architecture, Algorithms & Framing | [138-rfc9470-step-up-auth-coep-credentialless-and-jsonld11.md](./138-rfc9470-step-up-auth-coep-credentialless-and-jsonld11.md) | 15 findings (2021 total) |
 | 139 | Chuẩn Houdini Worklet (CSS Layout & Animation Worklet) và WebXR Hand Tracking & Hardware Layers trong Super-App Container | `139-css-layout-animation-worklets-and-webxr-hand-layers.md` |
 | 140 | Solid Protocol (Pods & WAC/ACP), W3C VISS v2 (Automotive Telematics), and FIDO MDS 3.0 & IETF RFC 9535 (JSONPath) | [140-solid-protocol-viss2-automotive-and-fido-mds-jsonpath.md](140-solid-protocol-viss2-automotive-and-fido-mds-jsonpath.md) |
+| 141 | Chuẩn Định Danh Phân Tán UUID (RFC 9562), Biểu Thức Chính Quy Kháng ReDoS I-Regexp (RFC 9485) & Đo Lường Vận Hành Proxy/Cache (RFC 9209 / RFC 9211) | [141-rfc9562-uuid-rfc9485-iregexp-and-rfc9209-rfc9211-proxy-cache.md](141-rfc9562-uuid-rfc9485-iregexp-and-rfc9209-rfc9211-proxy-cache.md) | 15 findings (2066 total) |
+| 142 | WICG Private Network Access (PNA), W3C CCG Credential Handler API (CHAPI) & WebAssembly JavaScript Promise Integration (JSPI) | [142-pna-chapi-and-wasm-jspi.md](./142-pna-chapi-and-wasm-jspi.md) |
+| 143 | IETF RFC 9557 (IXDTF) & Temporal Localization, IETF RFC 8949 Deterministic CBOR, và Matrix.org Client-Server Event DAG Federation Sandboxing | [143-rfc9557-ixdtf-cbor-deterministic-and-matrix-federation.md](./143-rfc9557-ixdtf-cbor-deterministic-and-matrix-federation.md) | 15 findings (2096 total) |
+| 144 | W3C WAI-ARIA 1.2 / 1.3, W3C AccName 1.2 / Core-AAM 1.2, và W3C ARIA Authoring Practices Guide (APG) Patterns | [144-wai-aria-accname-core-aam-and-apg-patterns.md](./144-wai-aria-accname-core-aam-and-apg-patterns.md) | 15 findings (2111 total) |
+| 145 | WICG Controlled Frame (IWA), CNCF SPIFFE Workload Identity & Native In-App Web Sandboxing (Android Custom Tabs/TWA & Apple App-Bound Domains) | [145-controlled-frame-spiffe-and-native-webview-sandboxing.md](./145-controlled-frame-spiffe-and-native-webview-sandboxing.md) | 15 findings (2126 total) |

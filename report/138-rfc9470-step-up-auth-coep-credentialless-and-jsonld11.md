@@ -49,7 +49,8 @@ Vòng nghiên cứu 138 mở rộng chuẩn hóa hệ thống qua 3 trụ cột 
     - `auth_time`: Thời điểm Unix Epoch khi người dùng tương tác xác thực.
   - Resource Server kiểm tra:
     $$\Delta t = 	ext{current\_time} - 	ext{auth\_time}$$
-    Nếu $\Delta t > 	ext{max\_age}$ hoặc `acr` không nằm trong danh mục cho phép $ightarrow$ từ chối ngay lập tức với HTTP 401 RFC 9470.
+    Nếu $\Delta t > 	ext{max\_age}$ hoặc `acr` không nằm trong danh mục cho phép $
+ightarrow$ từ chối ngay lập tức với HTTP 401 RFC 9470.
 
 #### 2.3. Điều phối Tự động qua Native WebView Bridge
 - Khi Mini App gửi request API gặp lỗi 401 `insufficient_user_authentication`, tầng SDK JavaScript trong WebView tự động phát hiện và gửi yêu cầu tới Super App Native Container:
@@ -80,7 +81,8 @@ Vòng nghiên cứu 138 mở rộng chuẩn hóa hệ thống qua 3 trụ cột 
   Cross-Origin-Embedder-Policy: credentialless
   ```
 - **Cơ chế hoạt động**: Mọi yêu cầu cross-origin phát sinh từ document sẽ được gửi đi **không mang theo thông tin xác thực** (no cookies, no client certificates, no authorization headers).
-- Phía server đích phản hồi không có cookies $ightarrow$ trình duyệt cho phép hiển thị an toàn vì kẻ tấn công không thể dùng document để đọc lén tài nguyên nhạy cảm có định danh của người dùng.
+- Phía server đích phản hồi không có cookies $
+ightarrow$ trình duyệt cho phép hiển thị an toàn vì kẻ tấn công không thể dùng document để đọc lén tài nguyên nhạy cảm có định danh của người dùng.
 
 #### 2.2. Thẻ `iframe credentialless` trong WHATWG HTML
 - Chuẩn HTML mở rộng thuộc tính boolean `credentialless` cho phần tử `<iframe>`:

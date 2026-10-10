@@ -1,9 +1,11 @@
 {
-  "iteration": 140,
-  "total_canonical_findings": 2051,
-  "unique_topics_count": 1309,
-  "unique_categories_count": 224,
-  "evidence_level_breakdown": {
+  "generated_at": "2026-10-10T05:57:26.085054+00:00",
+  "iteration": 145,
+  "total_findings": 2126,
+  "status": "fully_validated",
+  "zero_secrets_detected": true,
+  "citations_recheck_status": "all_passed_http_200",
+  "evidence_levels": {
     "unknown": 311,
     "normative_standard": 223,
     "industry_standard": 24,
@@ -25,7 +27,7 @@
     "industry_practice": 3,
     "community_standard": 5,
     "open_source_framework": 1,
-    "official_standard": 580,
+    "official_standard": 640,
     "best_practice_recommendation": 7,
     "draft_standard": 7,
     "vendor_standard": 1,
@@ -73,9 +75,8 @@
     "platform_documentation": 5,
     "technical_standard": 3,
     "industry_benchmark": 5,
-    "standard_proposal": 1
+    "standard_proposal": 1,
+    "authoritative_specification": 15
   },
-  "status": "verified_clean",
-  "credentials_excluded": true,
-  "validation_timestamp": "2026-10-10T04:22:00.000000+00:00"
+  "topic_sample_counts": 1476
 }
