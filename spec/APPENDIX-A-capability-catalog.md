@@ -8,6 +8,9 @@
 | Mục đích | Tra cứu năng lực → báo cáo nguồn → SPEC phụ trách |
 | Nguồn | 44 báo cáo chuyên đề (`report/48` … `report/91`) |
 
+> Danh mục này chỉ mục hóa các báo cáo `report/48` … `report/91`. Các báo cáo
+> mới hơn (nếu có) sẽ được bổ sung vào phiên bản sau của phụ lục này.
+
 ---
 
 ## 1. Mục đích & cách dùng

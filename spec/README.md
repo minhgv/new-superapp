@@ -1,8 +1,13 @@
 # Mini App Store Specification Suite (SPEC)
 
 Bộ tài liệu đặc tả (specification) chuẩn hóa cho **Mini App Store trên Super App**,
-được tổng hợp từ 92 báo cáo nghiên cứu và 1.376 bằng chứng đã kiểm chứng
-(`report/`, `evidence/findings.jsonl`).
+được tổng hợp ở thời điểm *iteration 95* từ 92 báo cáo nghiên cứu và 1.376 bằng chứng
+đã kiểm chứng (`report/`, `evidence/findings.jsonl`).
+
+> **Lưu ý về số liệu:** vòng nghiên cứu Deli Deep vẫn chạy liên tục và tiếp tục
+> bổ sung báo cáo + findings vào `report/` và `evidence/findings.jsonl`. Các con số
+> trong tài liệu này là số liệu **tại thời điểm tổng hợp**, không phải tổng hiện tại.
+> Số liệu mới nhất nằm trực tiếp ở hai file nguồn đó.
 
 > Bộ tài liệu này **tổng hợp** nghiên cứu thành các yêu cầu chuẩn hóa (normative requirements).
 > Nhật ký nghiên cứu gốc (theo iteration) vẫn được giữ nguyên tại [`../report/`](../report/) để tra cứu nguồn.
@@ -57,8 +62,8 @@ tại [APPENDIX-B](APPENDIX-B-conformance-checklist.md).
 
 ## 3. Nguồn bằng chứng
 
-- **Báo cáo nghiên cứu gốc**: [`../report/`](../report/) — 6 tài liệu lõi + 85 chuyên đề iteration.
-- **Bằng chứng thô**: [`../evidence/findings.jsonl`](../evidence/findings.jsonl) — 1.376 bản ghi append-only, mỗi bản ghi có URL nguồn và mức bằng chứng (`normative_standard` / `industry_standard` / `platform_practice`).
+- **Báo cáo nghiên cứu gốc**: [`../report/`](../report/) — các tài liệu lõi (01–06) và các chuyên đề theo iteration.
+- **Bằng chứng thô**: [`../evidence/findings.jsonl`](../evidence/findings.jsonl) — các bản ghi append-only, mỗi bản ghi có URL nguồn và mức bằng chứng (`normative_standard` / `industry_standard` / `platform_practice`).
 - **Phương pháp**: [`../methodology/README.md`](../methodology/README.md) — quy trình kiểm chứng URL, phân loại bằng chứng, tách chuẩn chính thức khỏi thực hành nhà cung cấp.
 
 ### Thỏa thuận dẫn nguồn
@@ -75,7 +80,7 @@ Yêu cầu **không có nguồn** là đề xuất kiến trúc (proposal) của
 
 | Phiên bản | Ngày | Thay đổi |
 |---|---|---|
-| 1.0.0 | 2026-10 | Tổng hợp lần đầu từ 92 báo cáo nghiên cứu |
+| 1.0.0 | 2026-10 | Tổng hợp lần đầu từ các báo cáo nghiên cứu (tới iteration 95) |
 
 Trạng thái hiện tại: **Draft**. Bộ tài liệu sẽ được nâng phiên bản khi có thêm bằng chứng
 hoặc quyết định kiến trúc mới. Các phát hiện lịch sử không bị ghi đè; chỉ bổ sung.
